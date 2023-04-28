@@ -18,7 +18,7 @@ author:
     roles: []
     affiliations:
       - Curvenote
-licence: CC-BY-SA 4.0
+license: CC BY-SA 4.0
 keywords:
   - La Palma
   - Earthquakes

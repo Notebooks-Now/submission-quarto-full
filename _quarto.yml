@@ -1,0 +1,15 @@
+project:
+  type: manuscript
+  render: 
+    - article.qmd
+
+manuscript:
+  meca: true
+
+format:
+  html:
+    toc: true
+    format-links: [agu-pdf, docx]
+  agu-pdf: default
+  docx: default
+  jats: default
