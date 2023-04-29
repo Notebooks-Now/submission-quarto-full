@@ -52,11 +52,11 @@ notebook-view:
 
 ## Introduction
 
-> The content of your notebook may be broken into any number of markdown or code cells. Markdown cells use MyST markdown and support [standard markdown typography](https://myst-tools.org/docs/mystjs/typography) and many [directives and roles](https://myst-tools.org/docs/mystjs/syntax-overview) for figures, tables, equations, etc.
+> The content of your notebook may be broken into any number of markdown or code cells. Markdown cells use Quarto markdown. Quarto markdown supports an extended version of the basic Markdown syntax originally created by John Gruber, which adds support for many common document elements including citations, figures, tables, admonitions, and more. Quarto markdown also supports the use of LaTeX for mathematical equations, advanced layout control, as well as other advanced formatting.
 
 La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands, a Spanish territory situated is the Atlantic Ocean where at their closest point are 100km from the African coast @fig-map. The island is one of the youngest, remains active and is still in the island forming stage.
 
-> Figures may be added to your notebook using the [figure directive](https://myst-tools.org/docs/mystjs/figures). They may refer to images saved in your `images/` folder, images from the web, or notebook cell outputs [referenced by label](https://myst-tools.org/docs/mystjs/cross-references#targeting-cells). The `:name:` is used to reference the figure in your text; a reference to the following figure is found in the paragraph above. The figure caption is given as the body of this directive.
+> Figures may be added to your notebook using [markdown images or specifial markdown elements](https://quarto.org/docs/authoring/figures.html) ('fenced divs'). They may refer to images saved in your `images/` folder (or other folders), images from the web, or generated directly using code cells. You may embed figures produced in other notebooks using the [embed shortcode](https://quarto.org/docs/authoring/notebook-embed.html) (this embed figures, tables, or any other content from Jupyter Notebooks). Refer to figures by their label (e.g. `@fig-map`).
 
 ![Map of La Palma in the Canary Islands. Image credit [NordNordWest](https://commons.wikimedia.org/w/index.php?curid=76638603)](images/la-palma-map.png){#fig-map align="center" width="100%"}
 
@@ -66,7 +66,8 @@ La Palma has been constructed by various phases of volcanism, the most recent an
 
 A number of eruptions were recorded since the colonization of the islands by Europeans in the late 1400s, these are summarised in @tbl-history.
 
-> Simple tables may be created using the [list-table directive](https://myst-tools.org/docs/mystjs/tables). Similar to figures, tables may be referenced in the text by their `name`. The caption for this table is the first line of the directive.
+> Quarto supports a number of ways to create tables using both standard markdown tables (pipe tables) and more complex markdown tables using a grid style syntax (grid tables). In addition, Quarto provides the ability to control column width, caption position, create subtables, and more. See [Quarto's table document](https://quarto.org/docs/authoring/tables.html) to learn more. Refer to tables in the text by their label (e.g. `@tbl-history`).
+
 
 | Name      | Year |
 | ----------- | ----------- |
@@ -83,7 +84,7 @@ A number of eruptions were recorded since the colonization of the islands by Eur
 
 This equates to an eruption on average every 79 years up until the 1971 event. The probability of a future eruption can be modeled by a Poisson distribution @eq-poisson.
 
-> Numbered equations may be defined using the [math directive or in line](https://myst-tools.org/docs/mystjs/math). Equations defined with the math directive may be reference in the text by label.
+> Numbered equations may be defined using 'dollar math' by placing equations between matching pairs of dollar signs. Learn more about Quarto's equation here: [https://quarto.org/docs/authoring/cross-references.html#equations](https://quarto.org/docs/authoring/cross-references.html#equations). Refer to equations in the text by their label (e.g. `@eq-poisson`).
 
 $$
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
@@ -100,7 +101,7 @@ So following the 1971 eruption the probability of an eruption in the following 5
 
 ### Magma Reservoirs
 
-> You may [add citations two ways](https://myst-tools.org/docs/mystjs/citations). First, you may simply insert a markdown link link to a DOI like so: [](10.1093/nar/22.22.4673). No additional bibliographic information is required for this approach; the reference will be looked up by DOI and added implicitly to the references. Alternatively, you may provide the bibliography directly as `references.bib` bibtex file, then embed the citation by bibtex key in your text using the `cite:p` or `cite:t` for parenthetical or textual citations, respectively. The following paragraph provides an example of this. A single paper may combine both DOI and bibtex citations.
+> You may provide the bibliography directly as a bibtex, biblatex, CSL JSON, or CSL YAML file (defined in the document front matter or `_quarto.yml` project file) then embed the citation by citation key in your text using the `[@cite]` or `@cite` for parenthetical or textual citations, respectively. The following paragraph provides an example of this. Quarto's [documentation on citations](https://quarto.org/docs/authoring/footnotes-and-citations.html) provides more details on working with bibliographies and citations.
 
 Studies of the magma systems feeding the volcano, such as @marrero2019 has proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).
 
@@ -120,7 +121,7 @@ The dataset was loaded into a Jupyter notebook [visualization](./notebooks/visua
 
 {{< embed notebooks/visualization-figure-creation-seaborn.ipynb#fig-timeline >}}
 
-> This figure uses cell output from the [visualization notebook](./notebooks/visualization-figure-creation-seaborn.ipynb). The first line of the [cell](fig-timeline) is `#| label: fig-timeline`. Referencing that label pulls in the output of the cell as a figure.
+> This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the `embed` shortcode and customizing embedded content in the [Quarto documentation](https://quarto.org/docs/authoring/notebook-embed.html).
 ```
 
 From our analysis in @fig-timeline, we can see 3 different systems in play.
