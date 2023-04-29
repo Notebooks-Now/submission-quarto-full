@@ -88,9 +88,9 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 
 <abstract>
 <disp-quote>
-  <p>The notebok should begin with a single markdown cell which contains
-  document front matter (such as the title, author data, license,
-  abstract, and more).</p>
+  <p>The notebook should begin with a single markdown cell which
+  contains document front matter (such as the title, author data,
+  license, abstract, and more).</p>
   <p>The abstract should begin with a short description of the problem
   addressed, briefly describe the new data or analyses, then briefly
   state the main conclusion(s) and how they are supported, and address
