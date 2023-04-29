@@ -144,11 +144,11 @@ div.csl-indent {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <blockquote class="blockquote">
-<p>The content of your notebook may be broken into any number of markdown or code cells. Markdown cells use MyST markdown and support <a href="https://myst-tools.org/docs/mystjs/typography">standard markdown typography</a> and many <a href="https://myst-tools.org/docs/mystjs/syntax-overview">directives and roles</a> for figures, tables, equations, etc.</p>
+<p>The content of your notebook may be broken into any number of markdown or code cells. Markdown cells use Quarto markdown. Quarto markdown supports an extended version of the basic Markdown syntax originally created by John Gruber, which adds support for many common document elements including citations, figures, tables, admonitions, and more. Quarto markdown also supports the use of LaTeX for mathematical equations, advanced layout control, as well as other advanced formatting.</p>
 </blockquote>
 <p>La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands, a Spanish territory situated is the Atlantic Ocean where at their closest point are 100km from the African coast <a href="#fig-map" class="quarto-xref">Figure&nbsp;1</a>. The island is one of the youngest, remains active and is still in the island forming stage.</p>
 <blockquote class="blockquote">
-<p>Figures may be added to your notebook using the <a href="https://myst-tools.org/docs/mystjs/figures">figure directive</a>. They may refer to images saved in your <code>images/</code> folder, images from the web, or notebook cell outputs <a href="https://myst-tools.org/docs/mystjs/cross-references#targeting-cells">referenced by label</a>. The <code>:name:</code> is used to reference the figure in your text; a reference to the following figure is found in the paragraph above. The figure caption is given as the body of this directive.</p>
+<p>Figures may be added to your notebook using <a href="https://quarto.org/docs/authoring/figures.html">markdown images or specifial markdown elements</a> (‘fenced divs’). They may refer to images saved in your <code>images/</code> folder (or other folders), images from the web, or generated directly using code cells. You may embed figures produced in other notebooks using the <a href="https://quarto.org/docs/authoring/notebook-embed.html">embed shortcode</a> (this embed figures, tables, or any other content from Jupyter Notebooks). Refer to figures by their label (e.g.&nbsp;<code>@fig-map</code>).</p>
 </blockquote>
 <div id="fig-map" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -161,7 +161,7 @@ div.csl-indent {
 <h3 class="anchored" data-anchor-id="eruption-history">Eruption History</h3>
 <p>A number of eruptions were recorded since the colonization of the islands by Europeans in the late 1400s, these are summarised in <a href="#tbl-history" class="quarto-xref">Table&nbsp;1</a>.</p>
 <blockquote class="blockquote">
-<p>Simple tables may be created using the <a href="https://myst-tools.org/docs/mystjs/tables">list-table directive</a>. Similar to figures, tables may be referenced in the text by their <code>name</code>. The caption for this table is the first line of the directive.</p>
+<p>Quarto supports a number of ways to create tables using both standard markdown tables (pipe tables) and more complex markdown tables using a grid style syntax (grid tables). In addition, Quarto provides the ability to control column width, caption position, create subtables, and more. See <a href="https://quarto.org/docs/authoring/tables.html">Quarto’s table document</a> to learn more. Refer to tables in the text by their label (e.g.&nbsp;<code>@tbl-history</code>).</p>
 </blockquote>
 <div id="tbl-history" class="anchored">
 <table class="table">
@@ -210,7 +210,7 @@ div.csl-indent {
 </div>
 <p>This equates to an eruption on average every 79 years up until the 1971 event. The probability of a future eruption can be modeled by a Poisson distribution <a href="#eq-poisson" class="quarto-xref">Equation&nbsp;1</a>.</p>
 <blockquote class="blockquote">
-<p>Numbered equations may be defined using the <a href="https://myst-tools.org/docs/mystjs/math">math directive or in line</a>. Equations defined with the math directive may be reference in the text by label.</p>
+<p>Numbered equations may be defined using ‘dollar math’ by placing equations between matching pairs of dollar signs. Learn more about Quarto’s equation here: <a href="https://quarto.org/docs/authoring/cross-references.html#equations">https://quarto.org/docs/authoring/cross-references.html#equations</a>. Refer to equations in the text by their label (e.g.&nbsp;<code>@eq-poisson</code>).</p>
 </blockquote>
 <p><span id="eq-poisson"><span class="math display">\[
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
@@ -224,7 +224,7 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 <section id="magma-reservoirs" class="level3">
 <h3 class="anchored" data-anchor-id="magma-reservoirs">Magma Reservoirs</h3>
 <blockquote class="blockquote">
-<p>You may <a href="https://myst-tools.org/docs/mystjs/citations">add citations two ways</a>. First, you may simply insert a markdown link link to a DOI like so: <a href="10.1093/nar/22.22.4673"></a>. No additional bibliographic information is required for this approach; the reference will be looked up by DOI and added implicitly to the references. Alternatively, you may provide the bibliography directly as <code>references.bib</code> bibtex file, then embed the citation by bibtex key in your text using the <code>cite:p</code> or <code>cite:t</code> for parenthetical or textual citations, respectively. The following paragraph provides an example of this. A single paper may combine both DOI and bibtex citations.</p>
+<p>You may provide the bibliography directly as a bibtex, biblatex, CSL JSON, or CSL YAML file (defined in the document front matter or <code>_quarto.yml</code> project file) then embed the citation by citation key in your text using the <code>[@cite]</code> or <code>@cite</code> for parenthetical or textual citations, respectively. The following paragraph provides an example of this. Quarto’s <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">documentation on citations</a> provides more details on working with bibliographies and citations.</p>
 </blockquote>
 <p>Studies of the magma systems feeding the volcano, such as <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span> has proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
 <div id="fig-reservoirs" class="quarto-figure quarto-figure-center anchored">
@@ -259,7 +259,7 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 </div>
 <a class="quarto-notebook-link" id="nblink-1" href="notebooks/visualization-figure-creation-seaborn.ipynb.html">Source: Visualizations</a></div>
 <blockquote class="blockquote">
-<p>This figure uses cell output from the <a href="./notebooks/visualization-figure-creation-seaborn.ipynb">visualization notebook</a>. The first line of the <a href="fig-timeline">cell</a> is <code>#| label: fig-timeline</code>. Referencing that label pulls in the output of the cell as a figure. ```</p>
+<p>This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the <code>embed</code> shortcode and customizing embedded content in the <a href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto documentation</a>. ```</p>
 </blockquote>
 <p>From our analysis in <a href="#fig-timeline" class="quarto-xref">Figure&nbsp;3</a>, we can see 3 different systems in play.</p>
 <p>Firstly, the shallow earthquake swarm leading up to the eruption on 19th September, related to significant surface deformation and shallow magma intrusion.</p>

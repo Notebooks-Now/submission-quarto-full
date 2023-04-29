@@ -124,11 +124,13 @@ system feeding the currently very active volcano.</p>
   <title>Introduction</title>
   <disp-quote>
     <p>The content of your notebook may be broken into any number of
-    markdown or code cells. Markdown cells use MyST markdown and support
-    <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/typography">standard
-    markdown typography</ext-link> and many
-    <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/syntax-overview">directives
-    and roles</ext-link> for figures, tables, equations, etc.</p>
+    markdown or code cells. Markdown cells use Quarto markdown. Quarto
+    markdown supports an extended version of the basic Markdown syntax
+    originally created by John Gruber, which adds support for many
+    common document elements including citations, figures, tables,
+    admonitions, and more. Quarto markdown also supports the use of
+    LaTeX for mathematical equations, advanced layout control, as well
+    as other advanced formatting.</p>
   </disp-quote>
   <p>La Palma is one of the west most islands in the Volcanic
   Archipelago of the Canary Islands, a Spanish territory situated is the
@@ -137,16 +139,17 @@ system feeding the currently very active volcano.</p>
   is one of the youngest, remains active and is still in the island
   forming stage.</p>
   <disp-quote>
-    <p>Figures may be added to your notebook using the
-    <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/figures">figure
-    directive</ext-link>. They may refer to images saved in your
-    <monospace>images/</monospace> folder, images from the web, or
-    notebook cell outputs
-    <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/cross-references#targeting-cells">referenced
-    by label</ext-link>. The <monospace>:name:</monospace> is used to
-    reference the figure in your text; a reference to the following
-    figure is found in the paragraph above. The figure caption is given
-    as the body of this directive.</p>
+    <p>Figures may be added to your notebook using
+    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/figures.html">markdown
+    images or specifial markdown elements</ext-link> (‘fenced divs’).
+    They may refer to images saved in your
+    <monospace>images/</monospace> folder (or other folders), images
+    from the web, or generated directly using code cells. You may embed
+    figures produced in other notebooks using the
+    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/notebook-embed.html">embed
+    shortcode</ext-link> (this embed figures, tables, or any other
+    content from Jupyter Notebooks). Refer to figures by their label
+    (e.g. <monospace>@fig-map</monospace>).</p>
   </disp-quote>
   <fig id="fig-map">
     <caption><p>Figure 1: Map of La Palma in the Canary Islands. Image
@@ -164,11 +167,15 @@ system feeding the currently very active volcano.</p>
     islands by Europeans in the late 1400s, these are summarised in
     <xref alt="Table 1" rid="tbl-history">Table 1</xref>.</p>
     <disp-quote>
-      <p>Simple tables may be created using the
-      <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/tables">list-table
-      directive</ext-link>. Similar to figures, tables may be referenced
-      in the text by their <monospace>name</monospace>. The caption for
-      this table is the first line of the directive.</p>
+      <p>Quarto supports a number of ways to create tables using both
+      standard markdown tables (pipe tables) and more complex markdown
+      tables using a grid style syntax (grid tables). In addition,
+      Quarto provides the ability to control column width, caption
+      position, create subtables, and more. See
+      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/tables.html">Quarto’s
+      table document</ext-link> to learn more. Refer to tables in the
+      text by their label
+      (e.g. <monospace>@tbl-history</monospace>).</p>
     </disp-quote>
     <table-wrap>
       <caption>
@@ -222,10 +229,12 @@ system feeding the currently very active volcano.</p>
     by a Poisson distribution
     <xref alt="Equation 1" rid="eq-poisson">Equation 1</xref>.</p>
     <disp-quote>
-      <p>Numbered equations may be defined using the
-      <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/math">math
-      directive or in line</ext-link>. Equations defined with the math
-      directive may be reference in the text by label.</p>
+      <p>Numbered equations may be defined using ‘dollar math’ by
+      placing equations between matching pairs of dollar signs. Learn
+      more about Quarto’s equation here:
+      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/cross-references.html#equations">https://quarto.org/docs/authoring/cross-references.html#equations</ext-link>.
+      Refer to equations in the text by their label
+      (e.g. <monospace>@eq-poisson</monospace>).</p>
     </disp-quote>
     <p><styled-content id="eq-poisson"><disp-formula><alternatives>
     <tex-math><![CDATA[
@@ -261,21 +270,16 @@ system feeding the currently very active volcano.</p>
   <sec id="magma-reservoirs">
     <title>Magma Reservoirs</title>
     <disp-quote>
-      <p>You may
-      <ext-link ext-link-type="uri" xlink:href="https://myst-tools.org/docs/mystjs/citations">add
-      citations two ways</ext-link>. First, you may simply insert a
-      markdown link link to a DOI like so:
-      <ext-link ext-link-type="uri" xlink:href="10.1093/nar/22.22.4673"></ext-link>.
-      No additional bibliographic information is required for this
-      approach; the reference will be looked up by DOI and added
-      implicitly to the references. Alternatively, you may provide the
-      bibliography directly as <monospace>references.bib</monospace>
-      bibtex file, then embed the citation by bibtex key in your text
-      using the <monospace>cite:p</monospace> or
-      <monospace>cite:t</monospace> for parenthetical or textual
-      citations, respectively. The following paragraph provides an
-      example of this. A single paper may combine both DOI and bibtex
-      citations.</p>
+      <p>You may provide the bibliography directly as a bibtex,
+      biblatex, CSL JSON, or CSL YAML file (defined in the document
+      front matter or <monospace>_quarto.yml</monospace> project file)
+      then embed the citation by citation key in your text using the
+      <monospace>[@cite]</monospace> or <monospace>@cite</monospace> for
+      parenthetical or textual citations, respectively. The following
+      paragraph provides an example of this. Quarto’s
+      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/footnotes-and-citations.html">documentation
+      on citations</ext-link> provides more details on working with
+      bibliographies and citations.</p>
     </disp-quote>
     <p>Studies of the magma systems feeding the volcano, such as Marrero
     et al.
@@ -327,12 +331,15 @@ system feeding the currently very active volcano.</p>
     <graphic mimetype="image" mime-subtype="png" xlink:href="article_files/figure-jats/fig-timeline-output-1.png" />
   </fig>
   <disp-quote>
-    <p>This figure uses cell output from the
-    <ext-link ext-link-type="uri" xlink:href="./notebooks/visualization-figure-creation-seaborn.ipynb">visualization
-    notebook</ext-link>. The first line of the
-    <ext-link ext-link-type="uri" xlink:href="fig-timeline">cell</ext-link>
-    is <monospace>#| label: fig-timeline</monospace>. Referencing that
-    label pulls in the output of the cell as a figure. ```</p>
+    <p>This figure uses cell output from the Visualization notebook.
+    That cell uses syntax at the top of the code to define a label and
+    caption for the figure. Referencing the label pulls in the output of
+    the cell in this document, and automatically creates links to the
+    source document. You can read more about using the
+    <monospace>embed</monospace> shortcode and customizing embedded
+    content in the
+    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto
+    documentation</ext-link>. ```</p>
   </disp-quote>
   <p>From our analysis in
   <xref alt="Figure 3" rid="fig-timeline">Figure 3</xref>, we can see 3
