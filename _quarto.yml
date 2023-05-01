@@ -2,16 +2,17 @@ project:
   type: manuscript
   render: 
     - article.qmd
-
 manuscript:
   meca: true
-
 format:
   html:
     toc: true
     format-links: [agu-pdf, docx]
     comments: 
-      hypothesis: true    
+      hypothesis: true   
+    notebook-view: 
+      - notebook: notebooks/data-screening.ipynb  
+        title: Data Screening
   agu-pdf: default
   docx: default
   jats: default
