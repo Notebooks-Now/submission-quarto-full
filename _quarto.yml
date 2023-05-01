@@ -4,6 +4,7 @@ project:
     - article.qmd
 manuscript:
   meca: true
+  manuscript-url: https://notebooks-now.github.io/submission-quarto-full/
 format:
   html:
     toc: true
