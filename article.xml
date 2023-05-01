@@ -1,74 +1,102 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
 and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+
 <article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
-  <front>
-    <journal-meta>
-      <journal-id/>
-      <journal-title-group>
-        <journal-title>Notebooks Now!</journal-title>
-      </journal-title-group>
-      <issn/>
-      <publisher>
-        <publisher-name/>
-      </publisher>
-    </journal-meta>
-    <article-meta>
-      <title-group>
-        <article-title>La Palma Earthquakes</article-title>
-      </title-group>
-      <contrib-group>
-        <contrib contrib-type="author" corresp="yes">
-          <contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
-          <name>
-            <surname>Purves</surname>
-            <given-names>Steve</given-names>
-          </name>
-          <string-name>Steve Purves</string-name>
-          <email>steve@curvenote.com</email>
-          <xref ref-type="aff" rid="aff-1">a</xref>
-          <xref ref-type="corresp" rid="cor-1">*</xref>
-        </contrib>
-        <contrib contrib-type="author">
-          <contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
-          <name>
-            <surname>Cockett</surname>
-            <given-names>Rowan</given-names>
-          </name>
-          <string-name>Rowan Cockett</string-name>
-          <xref ref-type="aff" rid="aff-1">a</xref>
-        </contrib>
-      </contrib-group>
-      <aff id="aff-1">
-        <institution-wrap>
-          <institution>Curvenote</institution>
-        </institution-wrap>
-      </aff>
-      <author-notes>
-        <corresp id="cor-1">steve@curvenote.com</corresp>
-      </author-notes>
-      <pub-date date-type="pub" publication-format="electronic" iso-8601-date="2022-05-11">
-        <year>2022</year>
-        <month>5</month>
-        <day>11</day>
-      </pub-date>
-      <history/>
-      <permissions>
-        <license license-type="creative-commons">
-          <ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/">https://creativecommons.org/licenses/by-sa/4.0/</ali:license_ref>
-        </license>
-      </permissions>
-      <abstract>
-        <disp-quote>
-          <p>The notebook should begin with a single markdown cell which
+
+<front>
+<journal-meta>
+<journal-id></journal-id>
+
+<journal-title-group>
+<journal-title>Notebooks Now!</journal-title>
+</journal-title-group>
+<issn></issn>
+
+<publisher>
+<publisher-name></publisher-name>
+</publisher>
+</journal-meta>
+
+
+<article-meta>
+
+
+<title-group>
+<article-title>La Palma Earthquakes</article-title>
+</title-group>
+
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0002-0760-5497</contrib-id>
+<name>
+<surname>Purves</surname>
+<given-names>Steve</given-names>
+</name>
+<string-name>Steve Purves</string-name>
+<email>steve@curvenote.com</email>
+<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="corresp" rid="cor-1">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0002-7859-8394</contrib-id>
+<name>
+<surname>Cockett</surname>
+<given-names>Rowan</given-names>
+</name>
+<string-name>Rowan Cockett</string-name>
+<xref ref-type="aff" rid="aff-1">a</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1">
+<institution-wrap>
+<institution>Curvenote</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1">steve@curvenote.com</corresp>
+</author-notes>
+
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2022-05-11">
+<year>2022</year>
+<month>5</month>
+<day>11</day>
+</pub-date>
+
+
+
+
+
+
+
+<history></history>
+
+<permissions>
+
+<license license-type="creative-commons">
+<ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/">https://creativecommons.org/licenses/by-sa/4.0/</ali:license_ref>
+
+</license>
+</permissions>
+
+<abstract>
+<disp-quote>
+  <p>The notebook should begin with a single markdown cell which
   contains document front matter (such as the title, author data,
   license, abstract, and more).</p>
-          <p>The abstract should begin with a short description of the problem
+  <p>The abstract should begin with a short description of the problem
   addressed, briefly describe the new data or analyses, then briefly
   state the main conclusion(s) and how they are supported, and address
   any uncertainty.</p>
-        </disp-quote>
-        <p>In September 2021, a significant jump in seismic activity on the
+</disp-quote>
+<p>In September 2021, a significant jump in seismic activity on the
 island of La Palma (Canary Islands, Spain) signaled the start of a
 volcanic crisis that still continues at the time of writing. Earthquake
 data is continually collected and published by the Instituto Geográphico
@@ -76,18 +104,24 @@ Nacional (IGN). We have created an accessible dataset from this and
 completed preliminary data analysis which shows seismicity originating
 at two distinct depths, consistent with the model of a two reservoir
 system feeding the currently very active volcano.</p>
-      </abstract>
-      <kwd-group kwd-group-type="author">
-        <kwd>La Palma</kwd>
-        <kwd>Earthquakes</kwd>
-      </kwd-group>
-    </article-meta>
-  </front>
-  <body>
-    <sec id="introduction">
-      <title>Introduction</title>
-      <disp-quote>
-        <p>The content of your notebook may be broken into any number of
+</abstract>
+<kwd-group kwd-group-type="author">
+<kwd>La Palma</kwd>
+<kwd>Earthquakes</kwd>
+</kwd-group>
+
+
+
+
+</article-meta>
+
+</front>
+
+<body>
+<sec id="introduction">
+  <title>Introduction</title>
+  <disp-quote>
+    <p>The content of your notebook may be broken into any number of
     markdown or code cells. Markdown cells use Quarto markdown. Quarto
     markdown supports an extended version of the basic Markdown syntax
     originally created by John Gruber, which adds support for many
@@ -95,15 +129,15 @@ system feeding the currently very active volcano.</p>
     admonitions, and more. Quarto markdown also supports the use of
     LaTeX for mathematical equations, advanced layout control, as well
     as other advanced formatting.</p>
-      </disp-quote>
-      <p>La Palma is one of the west most islands in the Volcanic
+  </disp-quote>
+  <p>La Palma is one of the west most islands in the Volcanic
   Archipelago of the Canary Islands, a Spanish territory situated is the
   Atlantic Ocean where at their closest point are 100km from the African
   coast <xref alt="Figure 1" rid="fig-map">Figure 1</xref>. The island
   is one of the youngest, remains active and is still in the island
   forming stage.</p>
-      <disp-quote>
-        <p>Figures may be added to your notebook using
+  <disp-quote>
+    <p>Figures may be added to your notebook using
     <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/figures.html">markdown
     images or specifial markdown elements</ext-link> (‘fenced divs’).
     They may refer to images saved in your
@@ -114,26 +148,24 @@ system feeding the currently very active volcano.</p>
     shortcode</ext-link> (this embed figures, tables, or any other
     content from Jupyter Notebooks). Refer to figures by their label
     (e.g. <monospace>@fig-map</monospace>).</p>
-      </disp-quote>
-      <fig id="fig-map">
-        <caption>
-          <p>Figure 1: Map of La Palma in the Canary Islands. Image
+  </disp-quote>
+  <fig id="fig-map">
+    <caption><p>Figure 1: Map of La Palma in the Canary Islands. Image
     credit
-    <ext-link ext-link-type="uri" xlink:href="https://commons.wikimedia.org/w/index.php?curid=76638603">NordNordWest</ext-link></p>
-        </caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png"/>
-      </fig>
-      <p>La Palma has been constructed by various phases of volcanism, the
+    <ext-link ext-link-type="uri" xlink:href="https://commons.wikimedia.org/w/index.php?curid=76638603">NordNordWest</ext-link></p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
+  </fig>
+  <p>La Palma has been constructed by various phases of volcanism, the
   most recent and currently active being the <italic>Cumbre
   Vieja</italic> volcano, a north-south volcanic ridge that constitutes
   the southern half of the island.</p>
-      <sec id="eruption-history">
-        <title>Eruption History</title>
-        <p>A number of eruptions were recorded since the colonization of the
+  <sec id="eruption-history">
+    <title>Eruption History</title>
+    <p>A number of eruptions were recorded since the colonization of the
     islands by Europeans in the late 1400s, these are summarised in
     <xref alt="Table 1" rid="tbl-history">Table 1</xref>.</p>
-        <disp-quote>
-          <p>Quarto supports a number of ways to create tables using both
+    <disp-quote>
+      <p>Quarto supports a number of ways to create tables using both
       standard markdown tables (pipe tables) and more complex markdown
       tables using a grid style syntax (grid tables). In addition,
       Quarto provides the ability to control column width, caption
@@ -142,166 +174,101 @@ system feeding the currently very active volcano.</p>
       table document</ext-link> to learn more. Refer to tables in the
       text by their label
       (e.g. <monospace>@tbl-history</monospace>).</p>
-        </disp-quote>
-        <table-wrap>
-          <caption>
-            <p>Table 1: Recent historic eruptions on La Palma</p>
-          </caption>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Year</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Current</td>
-                <td>2021</td>
-              </tr>
-              <tr>
-                <td>Teneguía</td>
-                <td>1971</td>
-              </tr>
-              <tr>
-                <td>Nambroque</td>
-                <td>1949</td>
-              </tr>
-              <tr>
-                <td>El Charco</td>
-                <td>1712</td>
-              </tr>
-              <tr>
-                <td>Volcán San Antonio</td>
-                <td>1677</td>
-              </tr>
-              <tr>
-                <td>Volcán San Martin</td>
-                <td>1646</td>
-              </tr>
-              <tr>
-                <td>Tajuya near El Paso</td>
-                <td>1585</td>
-              </tr>
-              <tr>
-                <td>Montaña Quemada</td>
-                <td>1492</td>
-              </tr>
-            </tbody>
-          </table>
-        </table-wrap>
-        <p>This equates to an eruption on average every 79 years up until
+    </disp-quote>
+    <table-wrap>
+      <caption>
+        <p>Table 1: Recent historic eruptions on La Palma</p>
+      </caption>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Current</td>
+            <td>2021</td>
+          </tr>
+          <tr>
+            <td>Teneguía</td>
+            <td>1971</td>
+          </tr>
+          <tr>
+            <td>Nambroque</td>
+            <td>1949</td>
+          </tr>
+          <tr>
+            <td>El Charco</td>
+            <td>1712</td>
+          </tr>
+          <tr>
+            <td>Volcán San Antonio</td>
+            <td>1677</td>
+          </tr>
+          <tr>
+            <td>Volcán San Martin</td>
+            <td>1646</td>
+          </tr>
+          <tr>
+            <td>Tajuya near El Paso</td>
+            <td>1585</td>
+          </tr>
+          <tr>
+            <td>Montaña Quemada</td>
+            <td>1492</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <p>This equates to an eruption on average every 79 years up until
     the 1971 event. The probability of a future eruption can be modeled
     by a Poisson distribution
     <xref alt="Equation 1" rid="eq-poisson">Equation 1</xref>.</p>
-        <disp-quote>
-          <p>Numbered equations may be defined using ‘dollar math’ by
+    <disp-quote>
+      <p>Numbered equations may be defined using ‘dollar math’ by
       placing equations between matching pairs of dollar signs. Learn
       more about Quarto’s equation here:
       <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/cross-references.html#equations">https://quarto.org/docs/authoring/cross-references.html#equations</ext-link>.
       Refer to equations in the text by their label
       (e.g. <monospace>@eq-poisson</monospace>).</p>
-        </disp-quote>
-        <p>
-          <styled-content id="eq-poisson">
-            <disp-formula>
-              <alternatives>
-                <tex-math><![CDATA[
+    </disp-quote>
+    <p><styled-content id="eq-poisson"><disp-formula><alternatives>
+    <tex-math><![CDATA[
     p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
      \qquad(1)]]></tex-math>
-                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block">
-                  <mml:mrow>
-                    <mml:mi>p</mml:mi>
-                    <mml:mrow>
-                      <mml:mo stretchy="true" form="prefix">(</mml:mo>
-                      <mml:mi>x</mml:mi>
-                      <mml:mo stretchy="true" form="postfix">)</mml:mo>
-                    </mml:mrow>
-                    <mml:mo>=</mml:mo>
-                    <mml:mfrac>
-                      <mml:mrow>
-                        <mml:msup>
-                          <mml:mi>e</mml:mi>
-                          <mml:mrow>
-                            <mml:mo>−</mml:mo>
-                            <mml:mi>λ</mml:mi>
-                          </mml:mrow>
-                        </mml:msup>
-                        <mml:msup>
-                          <mml:mi>λ</mml:mi>
-                          <mml:mi>x</mml:mi>
-                        </mml:msup>
-                      </mml:mrow>
-                      <mml:mrow>
-                        <mml:mi>x</mml:mi>
-                        <mml:mi>!</mml:mi>
-                      </mml:mrow>
-                    </mml:mfrac>
-                    <mml:mspace width="2.0em"/>
-                    <mml:mrow>
-                      <mml:mo stretchy="true" form="prefix">(</mml:mo>
-                      <mml:mn>1</mml:mn>
-                      <mml:mo stretchy="true" form="postfix">)</mml:mo>
-                    </mml:mrow>
-                  </mml:mrow>
-                </mml:math>
-              </alternatives>
-            </disp-formula>
-          </styled-content>
-        </p>
-        <p>Where <inline-formula><alternatives><tex-math><![CDATA[\lambda]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-    is the number of eruptions per year, <inline-formula><alternatives><tex-math><![CDATA[\lambda=\frac{1}{79}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>λ</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>79</mml:mn></mml:mfrac></mml:mrow></mml:math></alternatives></inline-formula>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
+    <p>Where <inline-formula><alternatives>
+    <tex-math><![CDATA[\lambda]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
+    is the number of eruptions per year, <inline-formula><alternatives>
+    <tex-math><![CDATA[\lambda=\frac{1}{79}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>λ</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>79</mml:mn></mml:mfrac></mml:mrow></mml:math></alternatives></inline-formula>
     in this case. The probability of a future eruption in the next
-    <inline-formula><alternatives><tex-math><![CDATA[t]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[t]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
     years can be calculated by:</p>
-        <p>
-          <styled-content id="eq-probability">
-            <disp-formula>
-              <alternatives>
-                <tex-math><![CDATA[
+    <p><styled-content id="eq-probability"><disp-formula><alternatives>
+    <tex-math><![CDATA[
     p_e = 1-\mathrm{e}^{-t \lambda}
      \qquad(2)]]></tex-math>
-                <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="block">
-                  <mml:mrow>
-                    <mml:msub>
-                      <mml:mi>p</mml:mi>
-                      <mml:mi>e</mml:mi>
-                    </mml:msub>
-                    <mml:mo>=</mml:mo>
-                    <mml:mn>1</mml:mn>
-                    <mml:mo>−</mml:mo>
-                    <mml:msup>
-                      <mml:mi mathvariant="normal">e</mml:mi>
-                      <mml:mrow>
-                        <mml:mo>−</mml:mo>
-                        <mml:mi>t</mml:mi>
-                        <mml:mi>λ</mml:mi>
-                      </mml:mrow>
-                    </mml:msup>
-                    <mml:mspace width="2.0em"/>
-                    <mml:mrow>
-                      <mml:mo stretchy="true" form="prefix">(</mml:mo>
-                      <mml:mn>2</mml:mn>
-                      <mml:mo stretchy="true" form="postfix">)</mml:mo>
-                    </mml:mrow>
-                  </mml:mrow>
-                </mml:math>
-              </alternatives>
-            </disp-formula>
-          </styled-content>
-        </p>
-        <p>So following the 1971 eruption the probability of an eruption in
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>p</mml:mi><mml:mi>e</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:msup><mml:mi mathvariant="normal">e</mml:mi><mml:mrow><mml:mo>−</mml:mo><mml:mi>t</mml:mi><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:mspace width="2.0em"></mml:mspace><mml:mrow><mml:mo stretchy="true" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo stretchy="true" form="postfix">)</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></styled-content></p>
+    <p>So following the 1971 eruption the probability of an eruption in
     the following 50 years — the period ending this year — was 0.469.
     After the event, the number of eruptions per year moves to
-    <inline-formula><alternatives><tex-math><![CDATA[\lambda=\frac{1}{75}]]></tex-math><mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" display="inline"><mml:mrow><mml:mi>λ</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>75</mml:mn></mml:mfrac></mml:mrow></mml:math></alternatives></inline-formula>
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\lambda=\frac{1}{75}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>λ</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>75</mml:mn></mml:mfrac></mml:mrow></mml:math></alternatives></inline-formula>
     and the probability of a further eruption within the next 50 years
     (2022-2071) rises to 0.487 and in the next 100 years, this rises
     again to 0.736.</p>
-      </sec>
-      <sec id="magma-reservoirs">
-        <title>Magma Reservoirs</title>
-        <disp-quote>
-          <p>You may provide the bibliography directly as a bibtex,
+  </sec>
+  <sec id="magma-reservoirs">
+    <title>Magma Reservoirs</title>
+    <disp-quote>
+      <p>You may provide the bibliography directly as a bibtex,
       biblatex, CSL JSON, or CSL YAML file (defined in the document
       front matter or <monospace>_quarto.yml</monospace> project file)
       then embed the citation by citation key in your text using the
@@ -311,34 +278,32 @@ system feeding the currently very active volcano.</p>
       <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/footnotes-and-citations.html">documentation
       on citations</ext-link> provides more details on working with
       bibliographies and citations.</p>
-        </disp-quote>
-        <p>Studies of the magma systems feeding the volcano, such as Marrero
+    </disp-quote>
+    <p>Studies of the magma systems feeding the volcano, such as Marrero
     et al.
     (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>)
     has proposed that there are two main magma reservoirs feeding the
     Cumbre Vieja volcano; one in the mantle (30-40km depth) which
     charges and in turn feeds a shallower crustal reservoir (10-20km
     depth).</p>
-        <fig id="fig-reservoirs">
-          <caption>
-            <p>Figure 2: Proposed model from Marrero et
-      al</p>
-          </caption>
-          <graphic mimetype="image" mime-subtype="png" xlink:href="images/reservoirs.png"/>
-        </fig>
-        <p>In this paper, we look at recent seismicity data to see if we can
+    <fig id="fig-reservoirs">
+      <caption><p>Figure 2: Proposed model from Marrero et
+      al</p></caption>
+      <graphic mimetype="image" mime-subtype="png" xlink:href="images/reservoirs.png" />
+    </fig>
+    <p>In this paper, we look at recent seismicity data to see if we can
     see evidence of such a system action, see
     <xref alt="Figure 2" rid="fig-reservoirs">Figure 2</xref>.</p>
-      </sec>
-    </sec>
-    <sec id="dataset">
-      <title>Dataset</title>
-      <disp-quote>
-        <p>All data used in the notebook should be present in the
+  </sec>
+</sec>
+<sec id="dataset">
+  <title>Dataset</title>
+  <disp-quote>
+    <p>All data used in the notebook should be present in the
     <monospace>data/</monospace> folder so notebooks may be executed in
     place with no additional input.</p>
-      </disp-quote>
-      <p>The earthquake dataset used in our analysis was generated from the
+  </disp-quote>
+  <p>The earthquake dataset used in our analysis was generated from the
   <ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html">IGN
   web portal</ext-link> this is public data released under a permissive
   license. Data recorded using the network of
@@ -349,24 +314,22 @@ system feeding the currently very active volcano.</p>
   <ext-link ext-link-type="uri" xlink:href="https://github.com/stevejpurves/ign-earthquake-data">is
   available on GitHub</ext-link> along with a copy of recently updated
   data.</p>
-    </sec>
-    <sec id="results">
-      <title>Results</title>
-      <p>The dataset was loaded into a Jupyter notebook
+</sec>
+<sec id="results">
+  <title>Results</title>
+  <p>The dataset was loaded into a Jupyter notebook
   <ext-link ext-link-type="uri" xlink:href="./notebooks/visualization-figure-creation-seaborn.ipynb">visualization</ext-link>
   and filtered down to La Palma events only. This results in 5465 data
   points which we then visualized to understand their distributions
   spatially, by depth, by magnitude and in time.</p>
-      <fig id="fig-timeline">
-        <caption>
-          <p>Figure 3: Earthquake data over time (n=5465) to
+  <fig id="fig-timeline">
+    <caption><p>Figure 3: Earthquake data over time (n=5465) to
     understand their distributions spatially, by depth, by magnitude and
-    in time.</p>
-        </caption>
-        <graphic mimetype="image" mime-subtype="png" xlink:href="article_files/figure-jats/fig-timeline-output-1.png"/>
-      </fig>
-      <disp-quote>
-        <p>This figure uses cell output from the Visualization notebook.
+    in time.</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="article_files/figure-jats/fig-timeline-output-1.png" />
+  </fig>
+  <disp-quote>
+    <p>This figure uses cell output from the Visualization notebook.
     That cell uses syntax at the top of the code to define a label and
     caption for the figure. Referencing the label pulls in the output of
     the cell in this document, and automatically creates links to the
@@ -375,86 +338,70 @@ system feeding the currently very active volcano.</p>
     content in the
     <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto
     documentation</ext-link>. ```</p>
-      </disp-quote>
-      <p>From our analysis in
+  </disp-quote>
+  <p>From our analysis in
   <xref alt="Figure 3" rid="fig-timeline">Figure 3</xref>, we can see 3
   different systems in play.</p>
-      <p>Firstly, the shallow earthquake swarm leading up to the eruption on
+  <p>Firstly, the shallow earthquake swarm leading up to the eruption on
   19th September, related to significant surface deformation and shallow
   magma intrusion.</p>
-      <p>After the eruption, continuous shallow seismicity started at
+  <p>After the eruption, continuous shallow seismicity started at
   10-15km corresponding to magma movement in the crustal reservoir.</p>
-      <p>Subsequently, high magnitude events begin occurring at 30-40km
+  <p>Subsequently, high magnitude events begin occurring at 30-40km
   depths corresponding to changes in the mantle reservoir. These are
   also continuous but occur with a lower frequency than in the crustal
   reservoir.</p>
-    </sec>
-    <sec id="conclusions">
-      <title>Conclusions</title>
-      <p>From the analysis of the earthquake data collected and published by
+</sec>
+<sec id="conclusions">
+  <title>Conclusions</title>
+  <p>From the analysis of the earthquake data collected and published by
   IGN for the period of 11 September through to 9 November 2021.
   Visualization of the earthquake events at different depths appears to
   confirm the presence of both mantle and crustal reservoirs as proposed
   by {cite:t}<monospace>marrero2019</monospace>.</p>
-    </sec>
-    <sec id="availability">
-      <title>Availability</title>
-      <disp-quote>
-        <p>Data availability statement should be specified in a separate
+</sec>
+<sec id="availability">
+  <title>Availability</title>
+  <disp-quote>
+    <p>Data availability statement should be specified in a separate
     block with metadata
-    <monospace>"part": "availability"</monospace>,
+    <monospace>&quot;part&quot;: &quot;availability&quot;</monospace>,
     similar to the abstract.</p>
-        <p>AGU requires an Availability Statement for the underlying data
+    <p>AGU requires an Availability Statement for the underlying data
     needed to understand, evaluate, and build upon the reported research
     at the time of peer review and publication.</p>
-      </disp-quote>
-      <p>A web scraping script was developed to pull data into a
+  </disp-quote>
+  <p>A web scraping script was developed to pull data into a
   machine-readable form for analysis. That code tool
   <ext-link ext-link-type="uri" xlink:href="https://github.com/stevejpurves/ign-earthquake-data">is
   available on GitHub</ext-link> along with a copy of recently updated
   data.</p>
-    </sec>
-  </body>
-  <back>
-    <ref-list>
-      <ref id="ref-marrero2019">
-        <element-citation publication-type="article-journal">
-          <person-group person-group-type="author">
-            <name>
-              <surname>Marrero</surname>
-              <given-names>José</given-names>
-            </name>
-            <name>
-              <surname>García</surname>
-              <given-names>Alicia</given-names>
-            </name>
-            <name>
-              <surname>Berrocoso</surname>
-              <given-names>Manuel</given-names>
-            </name>
-            <name>
-              <surname>Llinares</surname>
-              <given-names>Ángeles</given-names>
-            </name>
-            <name>
-              <surname>Rodríguez-Losada</surname>
-              <given-names>Antonio</given-names>
-            </name>
-            <name>
-              <surname>Ortiz</surname>
-              <given-names>R.</given-names>
-            </name>
-          </person-group>
-          <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
-          <source>Journal of Applied Volcanology</source>
-          <year iso-8601-date="2019-07">2019</year>
-          <month>07</month>
-          <volume>8</volume>
-          <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
-          <fpage/>
-          <lpage/>
-        </element-citation>
-      </ref>
-    </ref-list>
-  </back>
+</sec>
+</body>
+
+<back>
+<ref-list>
+  <ref id="ref-marrero2019">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Marrero</surname><given-names>José</given-names></name>
+        <name><surname>García</surname><given-names>Alicia</given-names></name>
+        <name><surname>Berrocoso</surname><given-names>Manuel</given-names></name>
+        <name><surname>Llinares</surname><given-names>Ángeles</given-names></name>
+        <name><surname>Rodríguez-Losada</surname><given-names>Antonio</given-names></name>
+        <name><surname>Ortiz</surname><given-names>R.</given-names></name>
+      </person-group>
+      <article-title>Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands)</article-title>
+      <source>Journal of Applied Volcanology</source>
+      <year iso-8601-date="2019-07">2019</year><month>07</month>
+      <volume>8</volume>
+      <pub-id pub-id-type="doi">10.1186/s13617-019-0085-5</pub-id>
+      <fpage></fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+</ref-list>
+</back>
+
+
 </article>
