@@ -14,7 +14,7 @@ format:
   agu-pdf: default
   docx: default
   jats:
-    notebook-subarticles: false
+    notebook-subarticles: true
 notebook-view: 
   - notebook: notebooks/data-screening.ipynb  
     title: Data Screening
