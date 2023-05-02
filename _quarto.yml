@@ -13,7 +13,8 @@ format:
       hypothesis: true   
   agu-pdf: default
   docx: default
-  jats: default
+  jats:
+    notebook-subarticles: false
 notebook-view: 
   - notebook: notebooks/data-screening.ipynb  
     title: Data Screening
