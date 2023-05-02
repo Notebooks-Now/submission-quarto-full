@@ -11,9 +11,9 @@ format:
     format-links: [agu-pdf, docx]
     comments: 
       hypothesis: true   
-    notebook-view: 
-      - notebook: notebooks/data-screening.ipynb  
-        title: Data Screening
   agu-pdf: default
   docx: default
   jats: default
+notebook-view: 
+  - notebook: notebooks/data-screening.ipynb  
+    title: Data Screening
