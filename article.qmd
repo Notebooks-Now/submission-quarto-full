@@ -122,7 +122,6 @@ The dataset was loaded into a Jupyter notebook [visualization](./notebooks/visua
 {{< embed notebooks/visualization-figure-creation-seaborn.ipynb#fig-timeline >}}
 
 > This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the `embed` shortcode and customizing embedded content in the [Quarto documentation](https://quarto.org/docs/authoring/notebook-embed.html).
-```
 
 From our analysis in @fig-timeline, we can see 3 different systems in play.
 
