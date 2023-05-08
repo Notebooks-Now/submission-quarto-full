@@ -1,20 +1,25 @@
 project:
   type: manuscript
-  render: 
-    - article.qmd
 manuscript:
-  meca: true
+  article: article.qmd
+  meca-archive: true
   manuscript-url: https://notebooks-now.github.io/submission-quarto-full/
+  resources:
+    - data/catalogoComunSV_1663233588717.csv
+    - data/lapalma_ign.csv
+
 format:
   html:
-    toc: true
-    format-links: [agu-pdf, docx]
     comments: 
       hypothesis: true   
-  agu-pdf: default
+  agu-pdf: 
+    notebook-links: inline
   docx: default
   jats:
     notebook-subarticles: true
-notebook-view: 
-  - notebook: notebooks/data-screening.ipynb  
-    title: Data Screening
+
+citation:
+  container-title: Earth and Space Science
+  type: article-journal
+  issued: 2023-05-01
+  doi: "10.1136/bmj.m4290"
