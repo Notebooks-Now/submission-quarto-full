@@ -1,7 +1,7 @@
 project:
   type: manuscript
+
 manuscript:
-  article: article.qmd
   meca-archive: true
   manuscript-url: https://notebooks-now.github.io/submission-quarto-full/
   resources:

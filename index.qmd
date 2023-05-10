@@ -37,17 +37,7 @@ citation:
   container-title: Notebooks Now!
 draft: false
 bibliography: references.bib
-format:
-  html:
-    toc: true
-    format-links: [agu-pdf,docx]
-  agu-pdf: default
-  docx: default
-  jats: default
 image: images/la-palma-eruption-2022-paper.png
-notebook-view:
-  - notebook: notebooks/visualization-figure-creation-seaborn.ipynb
-    title: Visualizations 
 ---
 
 ## Introduction
@@ -118,8 +108,6 @@ The earthquake dataset used in our analysis was generated from the [IGN web port
 ## Results
 
 The dataset was loaded into a Jupyter notebook [visualization](./notebooks/visualization-figure-creation-seaborn.ipynb) and filtered down to La Palma events only. This results in 5465 data points which we then visualized to understand their distributions spatially, by depth, by magnitude and in time.
-
-{{< embed notebooks/visualization-figure-creation-seaborn.ipynb#fig-timeline >}}
 
 > This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the `embed` shortcode and customizing embedded content in the [Quarto documentation](https://quarto.org/docs/authoring/notebook-embed.html).
 
