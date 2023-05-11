@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.25">
+<meta name="generator" content="quarto-1.4.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,16 +46,16 @@ div.csl-indent {
 }</style>
 
 
-<script src="article_files/libs/clipboard/clipboard.min.js"></script>
-<script src="article_files/libs/quarto-html/quarto.js"></script>
-<script src="article_files/libs/quarto-html/popper.min.js"></script>
-<script src="article_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="article_files/libs/quarto-html/anchor.min.js"></script>
-<link href="article_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="article_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="article_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="article_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="article_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -64,28 +64,30 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<meta name="citation_title" content="La Palma Earthquakes">
+<meta name="citation_abstract" content="&amp;amp;gt; The notebook should begin with a single markdown cell which contains document front matter (such as the title, author data, license, abstract, and more).
+>
+>The abstract should begin with a short description of the problem addressed, briefly describe the new data or analyses, then briefly state the main conclusion(s) and how they are supported, and address any uncertainty.
+
+In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.
+">
+<meta name="citation_keywords" content="La Palma,Earthquakes">
+<meta name="citation_author" content="Steve Purves">
+<meta name="citation_author" content="Rowan Cockett">
+<meta name="citation_publication_date" content="2022-05-11">
+<meta name="citation_cover_date" content="2022-05-11">
+<meta name="citation_year" content="2022">
+<meta name="citation_online_date" content="2022-05-11">
+<meta name="citation_language" content="en">
+<meta name="citation_journal_title" content="Notebooks Now!">
+<meta name="citation_reference" content="citation_title=Strategies for the development of volcanic hazard maps in monogenetic volcanic fields: The example of La Palma (Canary Islands);,citation_author=José Marrero;,citation_author=Alicia García;,citation_author=Manuel Berrocoso;,citation_author=Ángeles Llinares;,citation_author=Antonio Rodríguez-Losada;,citation_author=R. Ortiz;,citation_publication_date=2019-07;,citation_cover_date=2019-07;,citation_year=2019;,citation_doi=10.1186/s13617-019-0085-5;,citation_volume=8;,citation_journal_title=Journal of Applied Volcanology;">
 </head>
 
 <body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#eruption-history" id="toc-eruption-history" class="nav-link" data-scroll-target="#eruption-history">Eruption History</a></li>
-  <li><a href="#magma-reservoirs" id="toc-magma-reservoirs" class="nav-link" data-scroll-target="#magma-reservoirs">Magma Reservoirs</a></li>
-  </ul></li>
-  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
-  <li><a href="#availability" id="toc-availability" class="nav-link" data-scroll-target="#availability">Availability</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="article.pdf"><i class="bi bi-file-pdf"></i>PDF (agu)</a></li><li><a href="article.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="article-meca.zip"><i class="bi bi-file"></i>MECA Archive</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/visualization-figure-creation-seaborn.ipynb.html"><i class="bi bi-journal-code"></i>Visualizations</a></li><li><a href="notebooks/data-screening.ipynb.html"><i class="bi bi-journal-code"></i>Data Screening</a></li></ul></div></nav>
-</div>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index-meca.zip"><i class="bi bi-archive"></i>MECA Archive</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (agu)</a></li><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div><div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/visualization-figure-creation-seaborn.ipynb.html"><i class="bi bi-journal-code"></i>Visualization &amp; Figure Creation</a></li><li><a href="notebooks/data-screening.ipynb.html"><i class="bi bi-journal-code"></i>Data Screening</a></li><li><a href="notebooks/seismic-monitoring-stations.qmd.html"><i class="bi bi-journal-code"></i>Seismic Monitoring Stations</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -252,15 +254,15 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 <div class="cell-output cell-output-display">
 <div id="fig-timeline" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="article_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;3: Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time.</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<a class="quarto-notebook-link" id="nblink-1" href="notebooks/visualization-figure-creation-seaborn.ipynb.html#cell-fig-timeline">Source: Visualizations</a></div>
+<a class="quarto-notebook-link" id="nblink-1" href="notebooks/visualization-figure-creation-seaborn.ipynb.html#cell-fig-timeline">Source: Visualization &amp; Figure Creation</a></div>
 <blockquote class="blockquote">
-<p>This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the <code>embed</code> shortcode and customizing embedded content in the <a href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto documentation</a>. ```</p>
+<p>This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the <code>embed</code> shortcode and customizing embedded content in the <a href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto documentation</a>.</p>
 </blockquote>
 <p>From our analysis in <a href="#fig-timeline" class="quarto-xref">Figure&nbsp;3</a>, we can see 3 different systems in play.</p>
 <p>Firstly, the shallow earthquake swarm leading up to the eruption on 19th September, related to significant surface deformation and shallow magma intrusion.</p>
@@ -285,10 +287,12 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 <div id="ref-marrero2019" class="csl-entry" role="listitem">
 Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rodríguez-Losada, and R. Ortiz. 2019. <span>“Strategies for the Development of Volcanic Hazard Maps in Monogenetic Volcanic Fields: The Example of <span>La</span> <span>Palma</span> (<span>Canary</span> <span>Islands</span>).”</span> <em>Journal of Applied Volcanology</em> 8 (July). <a href="https://doi.org/10.1186/s13617-019-0085-5">https://doi.org/10.1186/s13617-019-0085-5</a>.
 </div>
-</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{purves2022,
+</div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">https://creativecommons.org/licenses/by-sa/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{purves2023,
   author = {Purves, Steve and Cockett, Rowan},
   title = {La {Palma} {Earthquakes}},
-  date = {2022-05-11},
+  journal = {Notebooks Now!},
+  date = {2023-05-01},
+  doi = {10.1136/bmj.m4290},
   langid = {en},
   abstract = {\textgreater{} The notebook should begin with a single
     markdown cell which contains document front matter (such as the
@@ -306,9 +310,9 @@ Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rod
     originating at two distinct depths, consistent with the model of a
     two reservoir system feeding the currently very active volcano.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-purves2022" class="csl-entry quarto-appendix-citeas" role="listitem">
-Purves, Steve, and Rowan Cockett. 2022. <span>“La Palma
-Earthquakes.”</span> Notebooks Now! May 11, 2022.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-purves2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Purves, Steve, and Rowan Cockett. 2023. <span>“La Palma
+Earthquakes.”</span> <em>Notebooks Now!</em>, May. <a href="https://doi.org/10.1136/bmj.m4290">https://doi.org/10.1136/bmj.m4290</a>.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -427,19 +431,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children.length > 2) {
-          for (let i = 0; i < 2; i++) {
-            container.appendChild(note.children[i].cloneNode(true));
+      if (note !== null) {
+        if (id.startsWith('sec-')) {
+          // Special case sections, only their first couple elements
+          const container = document.createElement("div");
+          if (note.children && note.children.length > 2) {
+            for (let i = 0; i < 2; i++) {
+              container.appendChild(note.children[i].cloneNode(true));
+            }
+            return container.innerHTML
+          } else {
+            return note.innerHTML;
           }
-          return container.innerHTML
         } else {
           return note.innerHTML;
         }
       } else {
-        return note.innerHTML;
+        return "";
       }
     });
   }
