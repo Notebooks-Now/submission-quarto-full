@@ -15,8 +15,7 @@ format:
   agu-pdf: 
     notebook-links: inline
   docx: default
-  jats:
-    notebook-subarticles: true
+  jats: default
 
 citation:
   container-title: Earth and Space Science
