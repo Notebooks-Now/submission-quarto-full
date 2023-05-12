@@ -2,7 +2,6 @@ project:
   type: manuscript
 
 manuscript:
-  meca-archive: true
   manuscript-url: https://notebooks-now.github.io/submission-quarto-full/
   resources:
     - data/catalogoComunSV_1663233588717.csv
