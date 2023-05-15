@@ -19,8 +19,8 @@
 <p>Load and review the data, check that dates are loaded properly and
 filter data down to the events in La Palma only. The dataset itself
 contains all recent IGN earthquake data for Spanish territory.</p>
-<sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18" sec-type="notebook-code">
-<sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18-output-0" content-type="notebook-output">
+<sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18" specific-use="notebook-code">
+<sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18-output-0" specific-use="notebook-output">
 <table-wrap>
   <table border="1">
     <thead>
@@ -121,8 +121,8 @@ contains all recent IGN earthquake data for Spanish territory.</p>
 </table-wrap>
 </sec>
 </sec>
-<sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046" sec-type="notebook-code">
-<sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046-output-0" content-type="notebook-output">
+<sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046" specific-use="notebook-code">
+<sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046-output-0" specific-use="notebook-output">
 <table-wrap>
   <table border="1">
     <thead>
@@ -214,8 +214,8 @@ contains all recent IGN earthquake data for Spanish territory.</p>
 </table-wrap>
 </sec>
 </sec>
-<sec id="cell-8f6c52f4-b28d-4c22-88c7-e1b17298cae7" sec-type="notebook-code">
-<sec id="8f6c52f4-b28d-4c22-88c7-e1b17298cae7-output-0" content-type="notebook-output">
+<sec id="cell-8f6c52f4-b28d-4c22-88c7-e1b17298cae7" specific-use="notebook-code">
+<sec id="8f6c52f4-b28d-4c22-88c7-e1b17298cae7-output-0" specific-use="notebook-output">
 <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-5-output-1.png" />
 </sec>
 </sec>
@@ -224,8 +224,8 @@ contains all recent IGN earthquake data for Spanish territory.</p>
   <p>Also some rows seem to be missing depth measurements, (see
   differences in the <bold>count</bold> for columns above) - take only
   rows with valid depths</p>
-  <sec id="c34e47c1-c9cb-4207-978c-292333863e9b" sec-type="notebook-code">
-  <sec id="c34e47c1-c9cb-4207-978c-292333863e9b-output-0" content-type="notebook-output">
+  <sec id="c34e47c1-c9cb-4207-978c-292333863e9b" specific-use="notebook-code">
+  <sec id="c34e47c1-c9cb-4207-978c-292333863e9b-output-0" specific-use="notebook-output">
   <table-wrap>
     <table border="1">
       <thead>
@@ -317,8 +317,8 @@ contains all recent IGN earthquake data for Spanish territory.</p>
   </table-wrap>
   </sec>
   </sec>
-  <sec id="cell-306ba432-daa7-4126-9b5a-689e1ad41e3a" sec-type="notebook-code">
-  <sec id="306ba432-daa7-4126-9b5a-689e1ad41e3a-output-0" content-type="notebook-output">
+  <sec id="cell-306ba432-daa7-4126-9b5a-689e1ad41e3a" specific-use="notebook-code">
+  <sec id="306ba432-daa7-4126-9b5a-689e1ad41e3a-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-7-output-1.png" />
   </sec>
   </sec>
@@ -326,12 +326,12 @@ contains all recent IGN earthquake data for Spanish territory.</p>
 <sec id="spatial-plot">
   <title>Spatial Plot</title>
   <p>Scatter plot the spatial locations of events</p>
-  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7" sec-type="notebook-code">
-  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-output-0" content-type="notebook-output">
+  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7" specific-use="notebook-code">
+  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-output-0" specific-use="notebook-output">
   <preformat>/opt/anaconda3/envs/py3/lib/python3.9/site-packages/matplotlib/collections.py:967: RuntimeWarning: invalid value encountered in sqrt
   scale = np.sqrt(self._sizes) * dpi / 72.0 * self._factor</preformat>
   </sec>
-  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-output-1" content-type="notebook-output">
+  <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-output-1" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-8-output-2.png" />
   </sec>
   </sec>
@@ -339,8 +339,8 @@ contains all recent IGN earthquake data for Spanish territory.</p>
     <title>Timeline Plot</title>
     <p>Scatter plot the event time series and look for any quantization
     issues. Have times &amp; dates been loaded correctly?</p>
-    <sec id="cell-58a022c7-f34c-499d-a749-aa01f0e1b5db" sec-type="notebook-code">
-    <sec id="58a022c7-f34c-499d-a749-aa01f0e1b5db-output-0" content-type="notebook-output">
+    <sec id="cell-58a022c7-f34c-499d-a749-aa01f0e1b5db" specific-use="notebook-code">
+    <sec id="58a022c7-f34c-499d-a749-aa01f0e1b5db-output-0" specific-use="notebook-output">
     <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-9-output-1.png" />
     </sec>
     </sec>

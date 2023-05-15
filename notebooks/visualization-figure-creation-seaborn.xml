@@ -24,8 +24,8 @@
   <p>Data taken directly from the IGN Catalog and processed using the
   <ext-link ext-link-type="uri" xlink:href="data-screening.ipynb">data
   screening notebook</ext-link>.</p>
-  <sec id="f48a68e0" sec-type="notebook-code">
-  <sec id="f48a68e0-output-0" content-type="notebook-output">
+  <sec id="f48a68e0" specific-use="notebook-code">
+  <sec id="f48a68e0-output-0" specific-use="notebook-output">
   <table-wrap>
     <table border="1">
       <thead>
@@ -150,8 +150,8 @@
   </table-wrap>
   </sec>
   </sec>
-  <sec id="cell-59c54f01" sec-type="notebook-code">
-  <sec id="59c54f01-output-0" content-type="notebook-output">
+  <sec id="cell-59c54f01" specific-use="notebook-code">
+  <sec id="59c54f01-output-0" specific-use="notebook-output">
   <preformat>0       2017-03-09 23:44:06
 1       2017-03-10 00:16:10
 2       2017-03-10 00:16:11
@@ -166,9 +166,9 @@
 Name: DateTime, Length: 11347, dtype: datetime64[ns]</preformat>
   </sec>
   </sec>
-  <sec id="cell-fig-timeline" sec-type="notebook-code">
-  <sec id="cell-fig-timeline-output-0" content-type="notebook-output">
-  <fig id="fig-timeline-nb-2">
+  <sec id="cell-fig-timeline" specific-use="notebook-code">
+  <sec id="cell-fig-timeline-output-0" specific-use="notebook-output">
+  <fig id="fig-timeline">
     <caption><p>Figure 1: Earthquake data over time (n=5465) to
     understand their distributions spatially, by depth, by magnitude and
     in time.</p></caption>
@@ -179,33 +179,33 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</preformat>
 </sec>
 <sec id="cumulative-distrubtion-plots">
   <title>Cumulative Distrubtion Plots</title>
-  <sec id="cell-9fc0146a" sec-type="notebook-code">
-  <sec id="9fc0146a-output-0" content-type="notebook-output">
+  <sec id="cell-9fc0146a" specific-use="notebook-code">
+  <sec id="9fc0146a-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-9-output-1.png" />
   </sec>
   </sec>
-  <sec id="b1fc42cc" sec-type="notebook-code">
-  <sec id="b1fc42cc-output-0" content-type="notebook-output">
+  <sec id="b1fc42cc" specific-use="notebook-code">
+  <sec id="b1fc42cc-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-10-output-1.png" />
   </sec>
   </sec>
-  <sec id="cell-19e275d7" sec-type="notebook-code">
-  <sec id="19e275d7-output-0" content-type="notebook-output">
+  <sec id="cell-19e275d7" specific-use="notebook-code">
+  <sec id="19e275d7-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-11-output-1.png" />
   </sec>
   </sec>
-  <sec id="cell-4bcecbd4" sec-type="notebook-code">
-  <sec id="4bcecbd4-output-0" content-type="notebook-output">
+  <sec id="cell-4bcecbd4" specific-use="notebook-code">
+  <sec id="4bcecbd4-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-12-output-1.png" />
   </sec>
   </sec>
-  <sec id="cell-012f5878" sec-type="notebook-code">
-  <sec id="012f5878-output-0" content-type="notebook-output">
+  <sec id="cell-012f5878" specific-use="notebook-code">
+  <sec id="012f5878-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-13-output-1.png" />
   </sec>
   </sec>
-  <sec id="cell-32e0996c" sec-type="notebook-code">
-  <sec id="32e0996c-output-0" content-type="notebook-output">
+  <sec id="cell-32e0996c" specific-use="notebook-code">
+  <sec id="32e0996c-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="visualization-figure-creation-seaborn_files/figure-jats/cell-14-output-1.png" />
   </sec>
   </sec>

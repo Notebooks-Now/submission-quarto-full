@@ -17,7 +17,7 @@
   chemistry/gas, deformation, and inclination. The network of seismic
   monitoring stations marked by the wave icon (dark blue) in Figure 1
   below is of particular interest to this study.</p>
-  <fig id="fig-stations-nb-3">
+  <fig id="fig-stations">
     <caption><p>Figure 1: Locations of monitoring stations on the island
     of La Palma - including locations of the 11 current seismic stations
     operating. The map shown is available on the IGN data portal at:
@@ -29,14 +29,14 @@
   <title>Seismic Monitoring Stations</title>
   <p>The active seismic monitoring stations have been installed over the
   period 2009 to 2021. As of Aug 5, 2022 there are 12 active stations
-  (<xref alt="Table 1" rid="tbl-active-nb-3">Table 1</xref>) and 4
+  (<xref alt="Table 1" rid="tbl-active">Table 1</xref>) and 4
   decommissioned stations
-  (<xref alt="Table 2" rid="tbl-inactive-nb-3">Table 2</xref>).</p>
+  (<xref alt="Table 2" rid="tbl-inactive">Table 2</xref>).</p>
   <table-wrap>
     <caption>
       <p>Table 1: Seismic monitoring stations on La Palma</p>
     </caption>
-    <table id="tbl-active-nb-3">
+    <table id="tbl-active">
       <colgroup>
         <col width="11%" />
         <col width="11%" />
@@ -168,7 +168,7 @@
       <p>Table 2: Decommissioned seismic monitoring stations on La
       Palma</p>
     </caption>
-    <table id="tbl-inactive-nb-3">
+    <table id="tbl-inactive">
       <colgroup>
         <col width="11%" />
         <col width="11%" />
