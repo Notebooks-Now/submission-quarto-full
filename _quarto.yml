@@ -2,6 +2,7 @@ project:
   type: manuscript
 
 manuscript:
+  article: article.qmd
   manuscript-url: https://notebooks-now.github.io/submission-quarto-full/
   resources:
     - data/catalogoComunSV_1663233588717.csv
