@@ -19,7 +19,20 @@
 <p>Load and review the data, check that dates are loaded properly and
 filter data down to the events in La Palma only. The dataset itself
 contains all recent IGN earthquake data for Spanish territory.</p>
+<sec id="cell-0e75ded9-f2dc-40ca-884b-d124d0e37ee4" specific-use="notebook-code">
+<code language="python">import pandas as pd
+import matplotlib.pyplot as plt</code>
+</sec>
 <sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18" specific-use="notebook-code">
+<code language="python">df = pd.read_csv('../data/catalogoComunSV_1663233588717.csv', sep=';')
+df.columns = ['Event', 'Date', 'Time', 'Latitude', 'Longitude', 'Depth(km)', 'Intensity','Magnitude', 'Type Mag', 'Location']
+df['Time'] = df['Time'].str.strip()
+df['Date'] = df['Date'].str.strip()
+df['DateTime'] = (df['Date'] + ' ' + df['Time']).apply(pd.to_datetime, format='%d/%m/%Y %H:%M:%S')
+df['Timestamp'] = pd.to_numeric(pd.to_datetime(df['DateTime']))
+df['Date'] = pd.to_datetime(df['Date'], format=&quot;%d/%m/%Y&quot;)
+df = df.sort_values(by=['DateTime'], ascending=True)
+df.head()</code>
 <sec id="ba38c3c1-51d7-48d9-8056-c23a0bbfcd18-output-0" specific-use="notebook-output">
 <table-wrap>
   <table border="1">
@@ -122,6 +135,7 @@ contains all recent IGN earthquake data for Spanish territory.</p>
 </sec>
 </sec>
 <sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046" specific-use="notebook-code">
+<code language="python">df.describe()</code>
 <sec id="d81abbcf-d7f2-43e8-ae0c-5f6ce44e6046-output-0" specific-use="notebook-output">
 <table-wrap>
   <table border="1">
@@ -215,6 +229,7 @@ contains all recent IGN earthquake data for Spanish territory.</p>
 </sec>
 </sec>
 <sec id="cell-8f6c52f4-b28d-4c22-88c7-e1b17298cae7" specific-use="notebook-code">
+<code language="python">df.plot.scatter(x=&quot;Longitude&quot;, y=&quot;Latitude&quot;, figsize=(12,12), grid=&quot;on&quot;);</code>
 <sec id="8f6c52f4-b28d-4c22-88c7-e1b17298cae7-output-0" specific-use="notebook-output">
 <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-5-output-1.png" />
 </sec>
@@ -225,6 +240,9 @@ contains all recent IGN earthquake data for Spanish territory.</p>
   differences in the <bold>count</bold> for columns above) - take only
   rows with valid depths</p>
   <sec id="c34e47c1-c9cb-4207-978c-292333863e9b" specific-use="notebook-code">
+  <code language="python">df = df[(df['Latitude'] &lt; 28.7) &amp; (df['Latitude'] &gt; 28.3) &amp; (df['Longitude'] &lt; -17.7) &amp; (df['Longitude'] &gt; -18)]
+df = df[df['Depth(km)'].notna()]
+df.describe()</code>
   <sec id="c34e47c1-c9cb-4207-978c-292333863e9b-output-0" specific-use="notebook-output">
   <table-wrap>
     <table border="1">
@@ -318,6 +336,16 @@ contains all recent IGN earthquake data for Spanish territory.</p>
   </sec>
   </sec>
   <sec id="cell-306ba432-daa7-4126-9b5a-689e1ad41e3a" specific-use="notebook-code">
+  <code language="python">plt.figure(figsize=(20,6))
+plt.subplot(1,3,1)
+df[&quot;Latitude&quot;].plot.hist(bins=20, density=True)
+df[&quot;Latitude&quot;].plot.kde()
+plt.subplot(1,3,2)
+df[&quot;Longitude&quot;].plot.hist(bins=20, density=True)
+df[&quot;Longitude&quot;].plot.kde()
+plt.subplot(1,3,3)
+df[&quot;Depth(km)&quot;].plot.hist(bins=50, density=True)
+_=df[&quot;Depth(km)&quot;].plot.kde()</code>
   <sec id="306ba432-daa7-4126-9b5a-689e1ad41e3a-output-0" specific-use="notebook-output">
   <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-7-output-1.png" />
   </sec>
@@ -327,6 +355,9 @@ contains all recent IGN earthquake data for Spanish territory.</p>
   <title>Spatial Plot</title>
   <p>Scatter plot the spatial locations of events</p>
   <sec id="ed0bda66-c063-47bd-a12e-c688543845b7" specific-use="notebook-code">
+  <code language="python">from matplotlib import colormaps
+cmap = colormaps['viridis_r']
+ax = df.plot.scatter(x=&quot;Longitude&quot;, y=&quot;Latitude&quot;, s=40-df[&quot;Depth(km)&quot;], c=df[&quot;Magnitude&quot;], figsize=(12,10), grid=&quot;on&quot;, cmap=cmap)</code>
   <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-output-0" specific-use="notebook-output">
   <preformat>/opt/anaconda3/envs/py3/lib/python3.9/site-packages/matplotlib/collections.py:967: RuntimeWarning: invalid value encountered in sqrt
   scale = np.sqrt(self._sizes) * dpi / 72.0 * self._factor</preformat>
@@ -340,9 +371,35 @@ contains all recent IGN earthquake data for Spanish territory.</p>
     <p>Scatter plot the event time series and look for any quantization
     issues. Have times &amp; dates been loaded correctly?</p>
     <sec id="cell-58a022c7-f34c-499d-a749-aa01f0e1b5db" specific-use="notebook-code">
+    <code language="python">ax = df.plot.scatter(x='DateTime', y='Depth(km)', figsize=(20,8))
+ax.set_ylim(50,0);</code>
     <sec id="58a022c7-f34c-499d-a749-aa01f0e1b5db-output-0" specific-use="notebook-output">
     <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-9-output-1.png" />
     </sec>
+    </sec>
+    <sec id="f0a0d350-ed14-4128-9efe-cfcf2d05a66b" specific-use="notebook-code">
+    <code language="python">df['Swarm'] = 0
+df.loc[(df['Date'] &gt;= '2017-10-01') &amp; (df['Date'] &lt;= '2017-10-31'), 'Swarm'] = 1
+df.loc[(df['Date'] &gt;= '2019-02-01') &amp; (df['Date'] &lt;= '2019-02-28'), 'Swarm'] = 2
+df.loc[(df['Date'] &gt;= '2020-07-21') &amp; (df['Date'] &lt;= '2020-08-05'), 'Swarm'] = 3
+df.loc[(df['Date'] &gt;= '2020-10-04') &amp; (df['Date'] &lt;= '2020-10-10'), 'Swarm'] = 4
+df.loc[(df['Date'] &gt;= '2020-10-11') &amp; (df['Date'] &lt;= '2020-10-22'), 'Swarm'] = 5
+df.loc[(df['Date'] &gt;= '2020-11-15') &amp; (df['Date'] &lt;= '2020-11-29'), 'Swarm'] = 6
+df.loc[(df['Date'] &gt;= '2020-12-10') &amp; (df['Date'] &lt;= '2020-12-29'), 'Swarm'] = 7
+df.loc[(df['Date'] &gt;= '2020-12-10') &amp; (df['Date'] &lt;= '2020-12-31'), 'Swarm'] = 8
+df.loc[(df['Date'] &gt;= '2021-01-15') &amp; (df['Date'] &lt;= '2021-02-07'), 'Swarm'] = 9
+df.loc[(df['Date'] &gt;= '2021-06-01') &amp; (df['Date'] &lt;= '2021-06-30'), 'Swarm'] = 10
+df.loc[(df['Date'] &gt;= '2021-07-01'), 'Swarm'] = None
+
+
+df['Phase'] = 0;
+df.loc[(df['Date'] &gt;= '2021-09-11') &amp; (df['Date'] &lt;= '2021-09-30'), 'Phase'] = 1
+df.loc[(df['Date'] &gt;= '2021-10-01') &amp; (df['Date'] &lt;= '2021-11-30'), 'Phase'] = 2
+df.loc[(df['Date'] &gt;= '2021-12-01') &amp; (df['Date'] &lt;= '2021-12-31'), 'Phase'] = 3
+df.loc[(df['Date'] &gt;= '2021-12-31'), 'Phase'] = 4</code>
+    </sec>
+    <sec id="abd100da-cf39-47e4-8287-de4e9f5e3f6d" specific-use="notebook-code">
+    <code language="python">df.to_csv(&quot;../data/lapalma_ign.csv&quot;, index=False)</code>
     </sec>
   </sec>
 </sec>
