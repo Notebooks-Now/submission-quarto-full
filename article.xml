@@ -1393,7 +1393,7 @@ plt.suptitle(f&quot;Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 ({len
           <td>13/01/2019</td>
           <td>Todoque, Los Llanos de Aridane</td>
           <td>HH</td>
-          <td>[link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CLLA&amp;mapa=N)</td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CLLA&amp;mapa=N">link</ext-link></td>
         </tr>
         <tr>
           <td>CFLP</td>
@@ -1401,7 +1401,7 @@ plt.suptitle(f&quot;Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 ({len
           <td>20/03/2019</td>
           <td>Los Canarios, Fuencaliente</td>
           <td>HH</td>
-          <td>[link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CFLP&amp;mapa=N)</td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CFLP&amp;mapa=N">link</ext-link></td>
         </tr>
         <tr>
           <td>CVIE</td>
@@ -1409,7 +1409,7 @@ plt.suptitle(f&quot;Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 ({len
           <td>08/04/2021</td>
           <td>Cumbre Vieja, Villa de Mazo</td>
           <td>EH</td>
-          <td>[link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CVIE&amp;mapa=N)</td>
+          <td><ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&amp;codEs=CVIE&amp;mapa=N">link</ext-link></td>
         </tr>
       </tbody>
     </table>

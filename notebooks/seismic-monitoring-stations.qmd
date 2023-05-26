@@ -41,9 +41,9 @@ The following decommissioned stations were previously part of the seismic networ
 | Id   | Installed  | Decommissioned   | Location                        | Channels | Links                                                                                                                                        |
 |--------|--------|--------|--------|--------|--------------------------------|
 | CMAZ | 10/11/2017 | 17/01/2018 | Villa de Mazo, Isla de la Palma | HH       | [link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=IGN&codEs=EHIG&mapa=N)    |
-| CLLA | 09/11/2017 | 13/01/2019 | Todoque, Los Llanos de Aridane  | HH       | \[link\](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CLLA&mapa=N) |
-| CFLP | 06/11/2017 | 20/03/2019 | Los Canarios, Fuencaliente      | HH       | \[link\](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CFLP&mapa=N) |
-| CVIE | 10/10/2017 | 08/04/2021 | Cumbre Vieja, Villa de Mazo     | EH       | \[link\](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CVIE&mapa=N) |
+| CLLA | 09/11/2017 | 13/01/2019 | Todoque, Los Llanos de Aridane  | HH       | [link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CLLA&mapa=N) |
+| CFLP | 06/11/2017 | 20/03/2019 | Los Canarios, Fuencaliente      | HH       | [link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CFLP&mapa=N) |
+| CVIE | 10/10/2017 | 08/04/2021 | Cumbre Vieja, Villa de Mazo     | EH       | [link](https://www.ign.es/web/ign/portal/vlc-estaciones-red/-/estaciones-canarias/sismologiaDetalleEstaciones?codT=BAJA&codEs=CVIE&mapa=N) |
 
 : Decommissioned seismic monitoring stations on La Palma {#tbl-inactive}
 
