@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.80">
+<meta name="generator" content="quarto-1.4.92">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,17 +46,22 @@ div.csl-indent {
 }</style>
 
 
-<script src="article_files/libs/clipboard/clipboard.min.js"></script>
-<script src="article_files/libs/quarto-html/quarto.js"></script>
-<script src="article_files/libs/quarto-html/popper.min.js"></script>
-<script src="article_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="article_files/libs/quarto-html/anchor.min.js"></script>
-<link href="article_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="article_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="article_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="article_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="article_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -409,10 +414,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -422,8 +426,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -439,31 +452,58 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
   for (var i=0; i<xrefs.length; i++) {
     const xref = xrefs[i];
-    tippyHover(xref, function() {
-      let href = xref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       if (note !== null) {
-        if (id.startsWith('sec-')) {
-          // Special case sections, only their first couple elements
-          const container = document.createElement("div");
-          if (note.children && note.children.length > 2) {
-            for (let i = 0; i < 2; i++) {
-              container.appendChild(note.children[i].cloneNode(true));
-            }
-            return container.innerHTML
-          } else {
-            return note.innerHTML;
-          }
-        } else {
-          return note.innerHTML;
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
         }
       } else {
-        return "";
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          console.log(htmlDoc.body.innerHTML);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -507,6 +547,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
