@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.92">
+    <meta name="generator" content="quarto-1.4.100">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -115,9 +115,9 @@
 </head>
   <body class="quarto-notebook">
     <div class="quarto-embed-header">
-      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> </a>
       <h6><i class="bi bi-journal-code"></i> Data Screening</h6>
-      <a href="data-screening.out.ipynb" class="btn btn-primary quarto-download-embed" data-noresolveinput="true" download="data-screening.ipynb">Download Notebook</a>
+      <a href="data-screening.out.ipynb" class="btn btn-primary quarto-download-embed" data-noresolveinput="true" download="data-screening.ipynb"></a>
     </div>
      <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -126,10 +126,8 @@
    
   <ul>
   <li><a href="#filter-down-to-la-palma-events-only" id="toc-filter-down-to-la-palma-events-only" class="nav-link active" data-scroll-target="#filter-down-to-la-palma-events-only">Filter down to La Palma events only</a></li>
-  <li><a href="#spatial-plot" id="toc-spatial-plot" class="nav-link" data-scroll-target="#spatial-plot">Spatial Plot</a>
-  <ul class="collapse">
+  <li><a href="#spatial-plot" id="toc-spatial-plot" class="nav-link" data-scroll-target="#spatial-plot">Spatial Plot</a></li>
   <li><a href="#timeline-plot" id="toc-timeline-plot" class="nav-link" data-scroll-target="#timeline-plot">Timeline Plot</a></li>
-  </ul></li>
   </ul>
 </nav>
 </div>
@@ -159,7 +157,12 @@
   </div>
   
 
-</header>     <p>Load and review the data, check that dates are loaded properly and filter data down to the events in La Palma only. The dataset itself contains all recent IGN earthquake data for Spanish territory.</p>
+</header>     <div id="0cd64b4c-6f90-4ce2-85c9-049058762f85" class="cell markdown">
+
+</div>
+<div id="96cd123b-e010-4778-9afa-9ca125ef50cc" class="cell markdown">
+<p>Load and review the data, check that dates are loaded properly and filter data down to the events in La Palma only. The dataset itself contains all recent IGN earthquake data for Spanish territory.</p>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="0e75ded9-f2dc-40ca-884b-d124d0e37ee4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -381,9 +384,12 @@
 <p><img src="data-screening_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<section id="filter-down-to-la-palma-events-only" class="level3 page-columns page-full">
+<div id="af76febd-11cd-4927-8476-5d8258ede326" class="cell markdown">
+<section id="filter-down-to-la-palma-events-only" class="level3">
 <h3 class="anchored" data-anchor-id="filter-down-to-la-palma-events-only">Filter down to La Palma events only</h3>
 <p>Also some rows seem to be missing depth measurements, (see differences in the <strong>count</strong> for columns above) - take only rows with valid depths</p>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="c34e47c1-c9cb-4207-978c-292333863e9b" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[(df[<span class="st">'Latitude'</span>] <span class="op">&lt;</span> <span class="fl">28.7</span>) <span class="op">&amp;</span> (df[<span class="st">'Latitude'</span>] <span class="op">&gt;</span> <span class="fl">28.3</span>) <span class="op">&amp;</span> (df[<span class="st">'Longitude'</span>] <span class="op">&lt;</span> <span class="op">-</span><span class="fl">17.7</span>) <span class="op">&amp;</span> (df[<span class="st">'Longitude'</span>] <span class="op">&gt;</span> <span class="op">-</span><span class="dv">18</span>)]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">'Depth(km)'</span>].notna()]</span>
@@ -498,10 +504,12 @@
 <p><img src="data-screening_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-</section>
-<section id="spatial-plot" class="level2 page-columns page-full">
+<div id="1bf2e599-12d6-40e9-bd99-db68ae6e72f5" class="cell markdown">
+<section id="spatial-plot" class="level2">
 <h2 class="anchored" data-anchor-id="spatial-plot">Spatial Plot</h2>
 <p>Scatter plot the spatial locations of events</p>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="ed0bda66-c063-47bd-a12e-c688543845b7" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> colormaps</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>cmap <span class="op">=</span> colormaps[<span class="st">'viridis_r'</span>]</span>
@@ -514,9 +522,12 @@
 <p><img src="data-screening_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
 </div>
 </div></div>
-<section id="timeline-plot" class="level3 page-columns page-full">
+<div id="c55cd6b8-7e01-4c2d-aa71-1649ca8aee01" class="cell markdown">
+<section id="timeline-plot" class="level3">
 <h3 class="anchored" data-anchor-id="timeline-plot">Timeline Plot</h3>
 <p>Scatter plot the event time series and look for any quantization issues. Have times &amp; dates been loaded correctly?</p>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="58a022c7-f34c-499d-a749-aa01f0e1b5db" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df.plot.scatter(x<span class="op">=</span><span class="st">'DateTime'</span>, y<span class="op">=</span><span class="st">'Depth(km)'</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">8</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">50</span>,<span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -548,8 +559,6 @@
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="abd100da-cf39-47e4-8287-de4e9f5e3f6d" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">"../data/lapalma_ign.csv"</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {

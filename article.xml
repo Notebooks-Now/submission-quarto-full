@@ -427,9 +427,11 @@ system feeding the currently very active volcano.</p>
 </front-stub>
 
 <body>
+<sec id="cell-96cd123b-e010-4778-9afa-9ca125ef50cc-nb-1" specific-use="notebook-content">
 <p>Load and review the data, check that dates are loaded properly and
 filter data down to the events in La Palma only. The dataset itself
 contains all recent IGN earthquake data for Spanish territory.</p>
+</sec>
 <sec id="cell-0e75ded9-f2dc-40ca-884b-d124d0e37ee4-nb-1" specific-use="notebook-code">
 <code language="python">import pandas as pd
 import matplotlib.pyplot as plt</code>
@@ -645,11 +647,13 @@ df.head()</code>
 <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-5-output-1.png" />
 </sec>
 </sec>
+<sec id="af76febd-11cd-4927-8476-5d8258ede326-nb-1" specific-use="notebook-content">
 <sec id="filter-down-to-la-palma-events-only-nb-1">
   <title>Filter down to La Palma events only</title>
   <p>Also some rows seem to be missing depth measurements, (see
   differences in the <bold>count</bold> for columns above) - take only
   rows with valid depths</p>
+  </sec>
   <sec id="c34e47c1-c9cb-4207-978c-292333863e9b-nb-1" specific-use="notebook-code">
   <code language="python">df = df[(df['Latitude'] &lt; 28.7) &amp; (df['Latitude'] &gt; 28.3) &amp; (df['Longitude'] &lt; -17.7) &amp; (df['Longitude'] &gt; -18)]
 df = df[df['Depth(km)'].notna()]
@@ -761,10 +765,12 @@ _=df[&quot;Depth(km)&quot;].plot.kde()</code>
   <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-7-output-1.png" />
   </sec>
   </sec>
+  <sec id="cell-1bf2e599-12d6-40e9-bd99-db68ae6e72f5-nb-1" specific-use="notebook-content">
 </sec>
 <sec id="spatial-plot-nb-1">
   <title>Spatial Plot</title>
   <p>Scatter plot the spatial locations of events</p>
+  </sec>
   <sec id="ed0bda66-c063-47bd-a12e-c688543845b7-nb-1" specific-use="notebook-code">
   <code language="python">from matplotlib import colormaps
 cmap = colormaps['viridis_r']
@@ -777,10 +783,12 @@ ax = df.plot.scatter(x=&quot;Longitude&quot;, y=&quot;Latitude&quot;, s=40-df[&q
   <graphic mimetype="image" mime-subtype="png" xlink:href="data-screening_files/figure-jats/cell-8-output-2.png" />
   </sec>
   </sec>
+  <sec id="c55cd6b8-7e01-4c2d-aa71-1649ca8aee01-nb-1" specific-use="notebook-content">
   <sec id="timeline-plot-nb-1">
     <title>Timeline Plot</title>
     <p>Scatter plot the event time series and look for any quantization
     issues. Have times &amp; dates been loaded correctly?</p>
+    </sec>
     <sec id="cell-58a022c7-f34c-499d-a749-aa01f0e1b5db-nb-1" specific-use="notebook-code">
     <code language="python">ax = df.plot.scatter(x='DateTime', y='Depth(km)', figsize=(20,8))
 ax.set_ylim(50,0);</code>
@@ -841,8 +849,10 @@ df.loc[(df['Date'] &gt;= '2021-12-31'), 'Phase'] = 4</code>
 </front-stub>
 
 <body>
+<sec id="cell-8f3f2a59-nb-2" specific-use="notebook-content">
 <sec id="main-timeline-figure-nb-2">
   <title>Main Timeline Figure</title>
+  </sec>
   <sec id="cell-12f72d64-nb-2" specific-use="notebook-code">
   <code language="python">%matplotlib inline
 import pandas as pd
@@ -866,12 +876,14 @@ sns.set_theme(style=&quot;whitegrid&quot;)</code>
     
     return df</code>
   </sec>
+  <sec id="cb96f187-nb-2" specific-use="notebook-content">
 </sec>
 <sec id="visualising-long-term-earthquake-data-nb-2">
   <title>Visualising Long term earthquake data</title>
   <p>Data taken directly from the IGN Catalog and processed using the
   <ext-link ext-link-type="uri" xlink:href="data-screening.ipynb">data
   screening notebook</ext-link>.</p>
+  </sec>
   <sec id="f48a68e0-nb-2" specific-use="notebook-code">
   <code language="python">df_ign = pd.read_csv('../data/lapalma_ign.csv')
 df_ign = make_category_columns(df_ign)
@@ -1122,9 +1134,11 @@ ax_timeline.set_xlabel(&quot;Eruption Timeline&quot;, dict(fontsize=20), labelpa
   </fig>
   </sec>
   </sec>
+  <sec id="cell-63241424-nb-2" specific-use="notebook-content">
 </sec>
 <sec id="cumulative-distrubtion-plots-nb-2">
   <title>Cumulative Distrubtion Plots</title>
+  </sec>
   <sec id="abbf0d50-nb-2" specific-use="notebook-code">
   <code language="python">def cumulative_events_mag_depth(df, hue='Depth', kind='scatter', ax=None, dpi=300, palette=None, kde=True):
     matplotlib.rcParams['ytick.labelright'] = False

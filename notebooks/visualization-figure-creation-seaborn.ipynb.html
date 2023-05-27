@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.92">
+    <meta name="generator" content="quarto-1.4.100">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -115,9 +115,9 @@
 </head>
   <body class="quarto-notebook">
     <div class="quarto-embed-header">
-      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> </a>
       <h6><i class="bi bi-journal-code"></i> Visualization &amp; Figure Creation</h6>
-      <a href="visualization-figure-creation-seaborn.out.ipynb" class="btn btn-primary quarto-download-embed" data-noresolveinput="true" download="visualization-figure-creation-seaborn.ipynb">Download Notebook</a>
+      <a href="visualization-figure-creation-seaborn.out.ipynb" class="btn btn-primary quarto-download-embed" data-noresolveinput="true" download="visualization-figure-creation-seaborn.ipynb"></a>
     </div>
      <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -157,8 +157,14 @@
   </div>
   
 
-</header>     <section id="main-timeline-figure" class="level2 page-columns page-full">
+</header>     <div id="04d3ce0a" class="cell markdown">
+
+</div>
+<div id="8f3f2a59" class="cell markdown">
+<section id="main-timeline-figure" class="level2">
 <h2 class="anchored" data-anchor-id="main-timeline-figure">Main Timeline Figure</h2>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="12f72d64" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -182,10 +188,12 @@
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    </span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-</section>
-<section id="visualising-long-term-earthquake-data" class="level2 page-columns page-full">
+<div id="cb96f187" class="cell markdown">
+<section id="visualising-long-term-earthquake-data" class="level2">
 <h2 class="anchored" data-anchor-id="visualising-long-term-earthquake-data">Visualising Long term earthquake data</h2>
 <p>Data taken directly from the IGN Catalog and processed using the <a href="data-screening.ipynb">data screening notebook</a>.</p>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="f48a68e0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_ign <span class="op">=</span> pd.read_csv(<span class="st">'../data/lapalma_ign.csv'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_ign <span class="op">=</span> make_category_columns(df_ign)</span>
@@ -439,9 +447,11 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 </div>
 </div>
 </div></div>
-</section>
-<section id="cumulative-distrubtion-plots" class="level2 page-columns page-full">
+<div id="63241424" class="cell markdown">
+<section id="cumulative-distrubtion-plots" class="level2">
 <h2 class="anchored" data-anchor-id="cumulative-distrubtion-plots">Cumulative Distrubtion Plots</h2>
+</section>
+</div>
 <div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="abbf0d50" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cumulative_events_mag_depth(df, hue<span class="op">=</span><span class="st">'Depth'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, ax<span class="op">=</span><span class="va">None</span>, dpi<span class="op">=</span><span class="dv">300</span>, palette<span class="op">=</span><span class="va">None</span>, kde<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    matplotlib.rcParams[<span class="st">'ytick.labelright'</span>] <span class="op">=</span> <span class="va">False</span></span>
@@ -496,7 +506,6 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
