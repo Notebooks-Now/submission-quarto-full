@@ -22,9 +22,9 @@ jobs:
           
       - name: Test Git Commands
         run: |
-          git config --get remote.origin.url
-          
-          git ls-remote origin gh-pages
+          git config --global --list
+          git config --local --lis
+          git config --worktree --list
           
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
