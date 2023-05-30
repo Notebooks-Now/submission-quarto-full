@@ -22,9 +22,10 @@ jobs:
           
       - name: Test Git Commands
         run: |
+          git status
           git config --global --list
           git config --local --lis
-          git config --worktree --list
+
           
       - name: Render and Publish 
         uses: quarto-dev/quarto-actions/publish@v2
