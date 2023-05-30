@@ -23,6 +23,7 @@ jobs:
       - name: Test Git Commands
         run: |
           git config --list --show-origin
+          git ls-remote origin
 
           
       - name: Render and Publish 
