@@ -313,8 +313,8 @@ system feeding the currently very active volcano.</p>
   <ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html">IGN
   web portal</ext-link> this is public data released under a permissive
   license. Data recorded using the network of
-  <xref alt="Seismic Monitoring Stations" rid="stations">Seismic
-  Monitoring Stations</xref> on the island. A web scraping script was
+  <ext-link ext-link-type="uri" xlink:href="notebooks/seismic-monitoring-stations.qmd">Seismic
+  Monitoring</ext-link> on the island. A web scraping script was
   developed to pull data into a machine-readable form for analysis. That
   code tool
   <ext-link ext-link-type="uri" xlink:href="https://github.com/stevejpurves/ign-earthquake-data">is
