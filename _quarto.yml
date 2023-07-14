@@ -7,10 +7,14 @@ manuscript:
     - data/catalogoComunSV_1663233588717.csv
     - data/lapalma_ign.csv
 
+
 format:
   html:
     comments: 
-      hypothesis: true   
+      hypothesis: false  
+    highlight-style: github
+    citations-hover: true
+    crossrefs-hover: true
   agu-pdf: 
     notebook-links: inline
   docx: default
