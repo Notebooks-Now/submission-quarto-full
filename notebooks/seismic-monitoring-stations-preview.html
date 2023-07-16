@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.226">
+    <meta name="generator" content="quarto-1.4.230">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -117,16 +117,15 @@
 <div id="fig-stations" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="../images/stations.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: <a href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" class="uri">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</a></figcaption>
+<figcaption class="figure-caption">Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: <a href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" class="uri">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</a></figcaption>
 </figure>
 </div>
 </section>
 <section id="seismic-monitoring-stations" class="level2">
 <h2 class="anchored" data-anchor-id="seismic-monitoring-stations">Seismic Monitoring Stations</h2>
-<p>The active seismic monitoring stations have been installed over the period 2009 to 2021. As of Aug 5, 2022 there are 12 active stations (<a href="#tbl-active" class="quarto-xref">Table&nbsp;1</a>) and 4 decommissioned stations (<a href="#tbl-inactive" class="quarto-xref">Table&nbsp;2</a>).</p>
-<div id="tbl-active" class="anchored">
+<p>The active seismic monitoring stations have been installed over the period 2009 to 2021. As of Aug 5, 2022 there are 12 active stations (<span class="citation" data-cites="tbl-active">@tbl-active</span>) and 4 decommissioned stations (<span class="citation" data-cites="tbl-inactive">@tbl-inactive</span>).</p>
 <table class="table">
-<caption>Table&nbsp;1: Seismic monitoring stations on La Palma</caption>
+<caption>Seismic monitoring stations on La Palma {#tbl-active}</caption>
 <thead>
 <tr class="header">
 <th>Id</th>
@@ -236,12 +235,10 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>A number of stations have been upgraded since commissioning, where EH (Extremely Short Period) sensors were replaced with HH (High Broad Band) sensors based on the change to the <a href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">SEED channel identifiers</a> reported.</p>
 <p>The following decommissioned stations were previously part of the seismic network on the island and contributed to measurements over the period 2017 to 2021.</p>
-<div id="tbl-inactive" class="anchored">
 <table class="table">
-<caption>Table&nbsp;2: Decommissioned seismic monitoring stations on La Palma</caption>
+<caption>Decommissioned seismic monitoring stations on La Palma {#tbl-inactive}</caption>
 <thead>
 <tr class="header">
 <th>Id</th>
@@ -287,7 +284,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 <div class="{note}">
 <p>For more information on the monitoring network in the Canary Islands visit <a href="https://www.ign.es/web/ign/portal/vlc-area-volcanologia" class="uri">https://www.ign.es/web/ign/portal/vlc-area-volcanologia</a></p>
 </div>
@@ -432,33 +428,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       instance.disable();
       let url = xref.getAttribute('href');
       let hash = undefined; 
-      try { hash = new URL(url).hash; } catch {}
-      const id = hash.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note !== null) {
-        try {
-          const html = processXRef(id, note);
-          instance.setContent(html);
-        } finally {
-          instance.enable();
-          instance.show();
-        }
+      if (url.startsWith('#')) {
+        hash = url;
       } else {
-        // See if we can fetch this
-        fetch(url.split('#')[0])
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.getElementById(id);
-          if (note !== null) {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
             const html = processXRef(id, note);
             instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
       }
     }, function(instance) {
     });

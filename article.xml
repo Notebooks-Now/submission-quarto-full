@@ -409,7 +409,7 @@ system feeding the currently very active volcano.</p>
 <back>
 </back>
 
-<sub-article article-type="notebook" id="nb-3-nb-1">
+<sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
 <title-group>
 <article-title>Seismic Monitoring Stations</article-title>
@@ -429,8 +429,8 @@ system feeding the currently very active volcano.</p>
   monitoring stations marked by the wave icon (dark blue) in Figure 1
   below is of particular interest to this study.</p>
   <fig id="fig-stations-nb-1">
-    <caption><p>Figure 1: Locations of monitoring stations on the island
-    of La Palma - including locations of the 11 current seismic stations
+    <caption><p>Locations of monitoring stations on the island of La
+    Palma - including locations of the 11 current seismic stations
     operating. The map shown is available on the IGN data portal at:
     <ext-link ext-link-type="uri" xlink:href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</ext-link></p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="../images/stations.png" />
@@ -440,14 +440,12 @@ system feeding the currently very active volcano.</p>
   <title>Seismic Monitoring Stations</title>
   <p>The active seismic monitoring stations have been installed over the
   period 2009 to 2021. As of Aug 5, 2022 there are 12 active stations
-  (<xref alt="Table 1" rid="tbl-active-nb-1">Table 1</xref>) and 4
-  decommissioned stations
-  (<xref alt="Table 2" rid="tbl-inactive-nb-1">Table 2</xref>).</p>
+  (@tbl-active) and 4 decommissioned stations (@tbl-inactive).</p>
   <table-wrap>
     <caption>
-      <p>Table 1: Seismic monitoring stations on La Palma</p>
+      <p>Seismic monitoring stations on La Palma {#tbl-active}</p>
     </caption>
-    <table id="tbl-active-nb-1">
+    <table>
       <colgroup>
         <col width="11%" />
         <col width="11%" />
@@ -576,10 +574,10 @@ system feeding the currently very active volcano.</p>
   period 2017 to 2021.</p>
   <table-wrap>
     <caption>
-      <p>Table 2: Decommissioned seismic monitoring stations on La
-      Palma</p>
+      <p>Decommissioned seismic monitoring stations on La Palma
+      {#tbl-inactive}</p>
     </caption>
-    <table id="tbl-inactive-nb-1">
+    <table>
       <colgroup>
         <col width="11%" />
         <col width="11%" />
@@ -647,7 +645,7 @@ system feeding the currently very active volcano.</p>
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-6-nb-2">
+<sub-article article-type="notebook" id="nb-7-nb-2">
 <front-stub>
 <title-group>
 <article-title>Visualization &amp; Figure Creation</article-title>
@@ -1019,7 +1017,7 @@ plt.suptitle(f&quot;Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 ({len
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-9-nb-3">
+<sub-article article-type="notebook" id="nb-10-nb-3">
 <front-stub>
 <title-group>
 <article-title>Data Screening</article-title>
