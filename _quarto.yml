@@ -15,6 +15,7 @@ format:
     highlight-style: github
     citations-hover: true
     crossrefs-hover: true
+    toc-location: left
   agu-pdf: 
     notebook-links: inline
   docx: default
@@ -25,3 +26,4 @@ citation:
   type: article-journal
   issued: 2023-05-01
   doi: "10.1136/bmj.m4290"
+
