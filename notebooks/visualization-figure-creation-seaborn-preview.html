@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.232">
+    <meta name="generator" content="quarto-1.4.241">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,11 +57,11 @@
     </style>
 
     <style>
-      body.hypothesis-enabled .quarto-embed-header {
+      body.hypothesis-enabled #quarto-embed-header {
         padding-right: 36px;
       }
 
-      .quarto-embed-header {
+      #quarto-embed-header {
         height: 3em;
         width: 100%;
         display: flex;
@@ -70,7 +70,7 @@
         border-bottom: solid 1px;
       }
 
-      .quarto-embed-header h6 {
+      #quarto-embed-header h6 {
         font-size: 1.1em;
         padding-top: 0.6em;
         margin-left: 1em;
@@ -78,8 +78,8 @@
         font-weight: 400;
       }
 
-      .quarto-embed-header a.quarto-back-link,
-      .quarto-embed-header a.quarto-download-embed {
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
         font-size: 0.8em;
         margin-top: 1em;
         margin-bottom: 1em;
@@ -91,9 +91,44 @@
         padding-left: 0.5em;
         display: flex;
       }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
     </style>
 
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
     
+<script src="../site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -109,17 +144,27 @@
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>  
       </head>
 
-  <body class="quarto-notebook fullcontent">
-    <div class="quarto-embed-header">
-      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      <a onclick="history.back(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
       <h6><i class="bi bi-journal-code"></i> Visualization &amp; Figure Creation</h6>
 
             <a href="../notebooks/visualization-figure-creation-seaborn.ipynb" class="btn btn-primary quarto-download-embed" download="visualization-figure-creation-seaborn.ipynb">Download Notebook</a>
           </div>
 
      <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
-<main class="content page-columns page-full" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#main-timeline-figure" id="toc-main-timeline-figure" class="nav-link active" data-scroll-target="#main-timeline-figure">Main Timeline Figure</a></li>
+  <li><a href="#visualising-long-term-earthquake-data" id="toc-visualising-long-term-earthquake-data" class="nav-link" data-scroll-target="#visualising-long-term-earthquake-data">Visualising Long term earthquake data</a></li>
+  <li><a href="#cumulative-distrubtion-plots" id="toc-cumulative-distrubtion-plots" class="nav-link" data-scroll-target="#cumulative-distrubtion-plots">Cumulative Distrubtion Plots</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Visualization &amp; Figure Creation</h1>
 </div>
@@ -145,12 +190,13 @@
   </div>
   
 
-</header>   <div id="8f3f2a59" class="cell markdown">
+
+</header>     <div id="8f3f2a59" class="cell markdown">
 <section id="main-timeline-figure" class="level2">
 <h2 class="anchored" data-anchor-id="main-timeline-figure">Main Timeline Figure</h2>
 </section>
 </div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="12f72d64" class="cell" data-execution_count="1">
+<div class="cell-container"><div class="cell-decorator"><pre>In [1]:</pre></div><div id="12f72d64" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>matplotlib inline</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
@@ -159,7 +205,7 @@
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sns.set_theme(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="291dc1cc" class="cell" data-execution_count="2">
+<div class="cell-container"><div class="cell-decorator"><pre>In [2]:</pre></div><div id="291dc1cc" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_category_columns(df):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'Depth'</span>] <span class="op">=</span> <span class="st">'Shallow (&lt;18km)'</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    df.loc[(df[<span class="st">'Depth(km)'</span>] <span class="op">&gt;=</span> <span class="dv">18</span>) <span class="op">&amp;</span> (df[<span class="st">'Depth(km)'</span>] <span class="op">&lt;=</span> <span class="dv">28</span>), <span class="st">'Depth'</span>] <span class="op">=</span> <span class="st">'Interchange (18km&gt;x&gt;28km)'</span></span>
@@ -179,7 +225,7 @@
 <p>Data taken directly from the IGN Catalog and processed using the <a href="../notebooks/data-screening-preview.html">data screening notebook</a>.</p>
 </section>
 </div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="f48a68e0" class="cell" data-execution_count="3">
+<div class="cell-container"><div class="cell-decorator"><pre>In [3]:</pre></div><div id="f48a68e0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_ign <span class="op">=</span> pd.read_csv(<span class="st">'../data/lapalma_ign.csv'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df_ign <span class="op">=</span> make_category_columns(df_ign)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>df_ign.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -311,7 +357,7 @@
 </div>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="59c54f01" class="cell" data-execution_count="4">
+<div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="59c54f01" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_ign[<span class="st">'DateTime'</span>] <span class="op">=</span> pd.to_datetime(df_ign[<span class="st">'Date'</span>] <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> df_ign[<span class="st">'Time'</span>])</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df_ign[<span class="st">'DateTime'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -329,7 +375,7 @@
 Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="f7731cea" class="cell" data-execution_count="5">
+<div class="cell-container"><div class="cell-decorator"><pre>In [5]:</pre></div><div id="f7731cea" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_ign_early <span class="op">=</span> df_ign[df_ign[<span class="st">'DateTime'</span>] <span class="op">&lt;</span> <span class="st">'2021-09-11'</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_ign_pre <span class="op">=</span> df_ign[(df_ign[<span class="st">'DateTime'</span>] <span class="op">&gt;=</span> <span class="st">'2021-09-11'</span>)<span class="op">&amp;</span>(df_ign[<span class="st">'DateTime'</span>] <span class="op">&lt;</span> <span class="st">'2021-09-19 14:13:00'</span>)]</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>df_ign_phase1 <span class="op">=</span> df_ign[(df_ign[<span class="st">'DateTime'</span>] <span class="op">&gt;=</span> <span class="st">'2021-09-19 14:13:00'</span>)<span class="op">&amp;</span>(df_ign[<span class="st">'DateTime'</span>] <span class="op">&lt;</span> <span class="st">'2021-10-01'</span>)]</span>
@@ -344,7 +390,7 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>df_erupt_4 <span class="op">=</span> df_erupt[(df_erupt[<span class="st">'Magnitude'</span>] <span class="op">&gt;=</span> <span class="fl">3.0</span>)<span class="op">&amp;</span>(df_erupt[<span class="st">'Magnitude'</span>] <span class="op">&lt;</span> <span class="fl">4.0</span>)]</span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>df_erupt_5 <span class="op">=</span> df_erupt[df_erupt[<span class="st">'Magnitude'</span>] <span class="op">&gt;</span> <span class="fl">4.0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="cell-fig-timeline" class="cell" data-execution_count="6">
+<div class="cell-container"><div class="cell-decorator"><pre>In [6]:</pre></div><div id="cell-fig-timeline" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.patches <span class="im">import</span> Rectangle</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime <span class="im">as</span> dt</span>
@@ -426,7 +472,7 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <div class="cell-output cell-output-display">
 <div id="fig-timeline" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></p>
+<p class=""><img src="visualization-figure-creation-seaborn_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;1: Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time.</figcaption>
 </figure>
 </div>
@@ -437,7 +483,7 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <h2 class="anchored" data-anchor-id="cumulative-distrubtion-plots">Cumulative Distrubtion Plots</h2>
 </section>
 </div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="abbf0d50" class="cell" data-execution_count="7">
+<div class="cell-container"><div class="cell-decorator"><pre>In [7]:</pre></div><div id="abbf0d50" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cumulative_events_mag_depth(df, hue<span class="op">=</span><span class="st">'Depth'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, ax<span class="op">=</span><span class="va">None</span>, dpi<span class="op">=</span><span class="dv">300</span>, palette<span class="op">=</span><span class="va">None</span>, kde<span class="op">=</span><span class="va">True</span>):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    matplotlib.rcParams[<span class="st">'ytick.labelright'</span>] <span class="op">=</span> <span class="va">False</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> sns.jointplot(x<span class="op">=</span><span class="st">"Magnitude"</span>, y<span class="op">=</span><span class="st">"Depth(km)"</span>, data<span class="op">=</span>df,</span>
@@ -449,42 +495,42 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    g.fig.axes[<span class="dv">0</span>].invert_yaxis()<span class="op">;</span></span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    g.fig.set_dpi(dpi)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="9fc0146a" class="cell" data-execution_count="8">
+<div class="cell-container"><div class="cell-decorator"><pre>In [8]:</pre></div><div id="9fc0146a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Cumulative Events 01-01-2017 to 01-01-2022'</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="b1fc42cc" class="cell" data-execution_count="9">
+<div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="b1fc42cc" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_early, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f'Events prior to 2021-09-11 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_early.index)<span class="sc">}</span><span class="ss"> events)'</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="19e275d7" class="cell" data-execution_count="10">
+<div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="19e275d7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_pre, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events Immediately before Eruption 11-19 September 2021 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_pre.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="4bcecbd4" class="cell" data-execution_count="11">
+<div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="4bcecbd4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase1, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 1 of Eruption 2021-09-11 to 2021-09-30 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase1.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="012f5878" class="cell" data-execution_count="12">
+<div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="012f5878" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase2, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 2 of Eruption 2021-10-01 to 2021-11-31 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase2.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
 </div>
 </div></div>
-<div class="cell-container column-page-left"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="32e0996c" class="cell" data-execution_count="13">
+<div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="32e0996c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase3, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase3.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -610,6 +656,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
   const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
     if (id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -622,6 +678,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return note.innerHTML;
       }
     } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
       return note.innerHTML;
     }
   }
@@ -641,7 +702,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         const note = window.document.getElementById(id);
         if (note !== null) {
           try {
-            const html = processXRef(id, note);
+            const html = processXRef(id, note.cloneNode(true));
             instance.setContent(html);
           } finally {
             instance.enable();

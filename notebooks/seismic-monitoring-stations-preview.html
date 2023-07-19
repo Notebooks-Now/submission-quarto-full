@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.232">
+    <meta name="generator" content="quarto-1.4.241">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,11 +24,11 @@
     </style>
 
     <style>
-      body.hypothesis-enabled .quarto-embed-header {
+      body.hypothesis-enabled #quarto-embed-header {
         padding-right: 36px;
       }
 
-      .quarto-embed-header {
+      #quarto-embed-header {
         height: 3em;
         width: 100%;
         display: flex;
@@ -37,7 +37,7 @@
         border-bottom: solid 1px;
       }
 
-      .quarto-embed-header h6 {
+      #quarto-embed-header h6 {
         font-size: 1.1em;
         padding-top: 0.6em;
         margin-left: 1em;
@@ -45,8 +45,8 @@
         font-weight: 400;
       }
 
-      .quarto-embed-header a.quarto-back-link,
-      .quarto-embed-header a.quarto-download-embed {
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
         font-size: 0.8em;
         margin-top: 1em;
         margin-bottom: 1em;
@@ -58,9 +58,44 @@
         padding-left: 0.5em;
         display: flex;
       }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
     </style>
 
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
     
+<script src="../site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -74,16 +109,25 @@
      
       </head>
 
-  <body class="quarto-notebook fullcontent">
-    <div class="quarto-embed-header">
-      <a href="../index.html" class="btn btn-outline-secondary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+  <body class="quarto-notebook">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      <a onclick="history.back(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
       <h6><i class="bi bi-journal-code"></i> Seismic Monitoring Stations</h6>
 
             <a href="../notebooks/seismic-monitoring-stations.qmd" class="btn btn-primary quarto-download-embed" download="seismic-monitoring-stations.qmd">Download Source</a>
           </div>
 
      <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#monitoring-la-palma" id="toc-monitoring-la-palma" class="nav-link active" data-scroll-target="#monitoring-la-palma">Monitoring La Palma</a></li>
+  <li><a href="#seismic-monitoring-stations" id="toc-seismic-monitoring-stations" class="nav-link" data-scroll-target="#seismic-monitoring-stations">Seismic Monitoring Stations</a></li>
+  </ul>
+</nav>
+</div>
 <main class="content" id="quarto-document-content">      <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Seismic Monitoring Stations</h1>
@@ -110,7 +154,8 @@
   </div>
   
 
-</header>   <section id="monitoring-la-palma" class="level2">
+
+</header>     <section id="monitoring-la-palma" class="level2">
 <h2 class="anchored" data-anchor-id="monitoring-la-palma">Monitoring La Palma</h2>
 <p>The Instituto Geográphico Nacional of Spain maintains a listing of the monitoring equipment and resources installed on the Canary Islands, including the island of La Palma. The equipment is installed and operated by the various cooperating governmental organizations and IGN.</p>
 <p>The monitoring stations measure position, seismic activity, chemistry/gas, deformation, and inclination. The network of seismic monitoring stations marked by the wave icon (dark blue) in Figure 1 below is of particular interest to this study.</p>
@@ -407,6 +452,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
   const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
     if (id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
@@ -419,6 +474,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return note.innerHTML;
       }
     } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
       return note.innerHTML;
     }
   }
@@ -438,7 +498,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         const note = window.document.getElementById(id);
         if (note !== null) {
           try {
-            const html = processXRef(id, note);
+            const html = processXRef(id, note.cloneNode(true));
             instance.setContent(html);
           } finally {
             instance.enable();
