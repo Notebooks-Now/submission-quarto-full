@@ -10,12 +10,13 @@ manuscript:
 
 format:
   html:
+    theme: cosmo
     comments: 
-      hypothesis: false  
-    highlight-style: github
+      hypothesis: true
     citations-hover: true
     crossrefs-hover: true
     toc-location: left
+    title-block-style: manuscript
   agu-pdf: 
     notebook-links: inline
   docx: default
