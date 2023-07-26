@@ -70,11 +70,7 @@ div.csl-indent {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <meta name="citation_title" content="La Palma Earthquakes">
-<meta name="citation_abstract" content="&amp;amp;gt; The notebook should begin with a single markdown cell which contains document front matter (such as the title, author data, license, abstract, and more).
->
->The abstract should begin with a short description of the problem addressed, briefly describe the new data or analyses, then briefly state the main conclusion(s) and how they are supported, and address any uncertainty.
-
-In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.
+<meta name="citation_abstract" content="In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.
 ">
 <meta name="citation_keywords" content="La Palma,Earthquakes">
 <meta name="citation_author" content="Steve Purves">
@@ -141,10 +137,6 @@ In September 2021, a significant jump in seismic activity on the island of La Pa
     <div>
       <div class="abstract">
         <div class="block-title">Abstract</div>
-        <blockquote class="blockquote">
-        <p>The notebook should begin with a single markdown cell which contains document front matter (such as the title, author data, license, abstract, and more).</p>
-        <p>The abstract should begin with a short description of the problem addressed, briefly describe the new data or analyses, then briefly state the main conclusion(s) and how they are supported, and address any uncertainty.</p>
-        </blockquote>
         <p>In September 2021, a significant jump in seismic activity on the island of La Palma (Canary Islands, Spain) signaled the start of a volcanic crisis that still continues at the time of writing. Earthquake data is continually collected and published by the Instituto Geográphico Nacional (IGN). We have created an accessible dataset from this and completed preliminary data analysis which shows seismicity originating at two distinct depths, consistent with the model of a two reservoir system feeding the currently very active volcano.</p>
       </div>
     </div>
@@ -186,13 +178,7 @@ In September 2021, a significant jump in seismic activity on the island of La Pa
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<blockquote class="blockquote">
-<p>The content of your notebook may be broken into any number of markdown or code cells. Markdown cells use Quarto markdown. Quarto markdown supports an extended version of the basic Markdown syntax originally created by John Gruber, which adds support for many common document elements including citations, figures, tables, admonitions, and more. Quarto markdown also supports the use of LaTeX for mathematical equations, advanced layout control, as well as other advanced formatting.</p>
-</blockquote>
 <p>La Palma is one of the west most islands in the Volcanic Archipelago of the Canary Islands, a Spanish territory situated is the Atlantic Ocean where at their closest point are 100km from the African coast <a href="#fig-map" class="quarto-xref">Figure&nbsp;1</a>. The island is one of the youngest, remains active and is still in the island forming stage.</p>
-<blockquote class="blockquote">
-<p>Figures may be added to your notebook using <a href="https://quarto.org/docs/authoring/figures.html">markdown images or specifial markdown elements</a> (‘fenced divs’). They may refer to images saved in your <code>images/</code> folder (or other folders), images from the web, or generated directly using code cells. You may embed figures produced in other notebooks using the <a href="https://quarto.org/docs/authoring/notebook-embed.html">embed shortcode</a> (this embed figures, tables, or any other content from Jupyter Notebooks). Refer to figures by their label (e.g.&nbsp;<code>@fig-map</code>).</p>
-</blockquote>
 <div id="fig-map" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="images/la-palma-map.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></p>
@@ -203,9 +189,6 @@ In September 2021, a significant jump in seismic activity on the island of La Pa
 <section id="eruption-history" class="level3">
 <h3 class="anchored" data-anchor-id="eruption-history">Eruption History</h3>
 <p>A number of eruptions were recorded since the colonization of the islands by Europeans in the late 1400s, these are summarised in <a href="#tbl-history" class="quarto-xref">Table&nbsp;1</a>.</p>
-<blockquote class="blockquote">
-<p>Quarto supports a number of ways to create tables using both standard markdown tables (pipe tables) and more complex markdown tables using a grid style syntax (grid tables). In addition, Quarto provides the ability to control column width, caption position, create subtables, and more. See <a href="https://quarto.org/docs/authoring/tables.html">Quarto’s table document</a> to learn more. Refer to tables in the text by their label (e.g.&nbsp;<code>@tbl-history</code>).</p>
-</blockquote>
 <div id="tbl-history" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: Recent historic eruptions on La Palma</caption>
@@ -252,9 +235,6 @@ In September 2021, a significant jump in seismic activity on the island of La Pa
 </table>
 </div>
 <p>This equates to an eruption on average every 79 years up until the 1971 event. The probability of a future eruption can be modeled by a Poisson distribution <a href="#eq-poisson" class="quarto-xref">Equation&nbsp;1</a>.</p>
-<blockquote class="blockquote">
-<p>Numbered equations may be defined using ‘dollar math’ by placing equations between matching pairs of dollar signs. Learn more about Quarto’s equation here: <a href="https://quarto.org/docs/authoring/cross-references.html#equations">https://quarto.org/docs/authoring/cross-references.html#equations</a>. Refer to equations in the text by their label (e.g.&nbsp;<code>@eq-poisson</code>).</p>
-</blockquote>
 <p><span id="eq-poisson"><span class="math display">\[
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
 \tag{1}\]</span></span></p>
@@ -266,9 +246,6 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 </section>
 <section id="magma-reservoirs" class="level3">
 <h3 class="anchored" data-anchor-id="magma-reservoirs">Magma Reservoirs</h3>
-<blockquote class="blockquote">
-<p>You may provide the bibliography directly as a bibtex, biblatex, CSL JSON, or CSL YAML file (defined in the document front matter or <code>_quarto.yml</code> project file) then embed the citation by citation key in your text using the <code>[@cite]</code> or <code>@cite</code> for parenthetical or textual citations, respectively. The following paragraph provides an example of this. Quarto’s <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">documentation on citations</a> provides more details on working with bibliographies and citations.</p>
-</blockquote>
 <p>Studies of the magma systems feeding the volcano, such as <span class="citation" data-cites="marrero2019">Marrero et al. (<a href="#ref-marrero2019" role="doc-biblioref">2019</a>)</span> has proposed that there are two main magma reservoirs feeding the Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
 <div id="fig-reservoirs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -281,9 +258,6 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 </section>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<blockquote class="blockquote">
-<p>All data used in the notebook should be present in the <code>data/</code> folder so notebooks may be executed in place with no additional input.</p>
-</blockquote>
 <p>The earthquake dataset used in our analysis was generated from the <a href="https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html">IGN web portal</a> this is public data released under a permissive license. Data recorded using the network of <a href="./notebooks/seismic-monitoring-stations-preview.html">Seismic Monitoring</a> on the island. A web scraping script was developed to pull data into a machine-readable form for analysis. That code tool <a href="https://github.com/stevejpurves/ign-earthquake-data">is available on GitHub</a> along with a copy of recently updated data.</p>
 </section>
 <section id="results" class="level2 page-columns page-full">
@@ -301,9 +275,6 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 </div>
 </div>
 <a class="quarto-notebook-link" id="nblink-1" href="notebooks/visualization-figure-creation-seaborn-preview.html#cell-fig-timeline">Source: Visualization &amp; Figure Creation</a></div>
-<blockquote class="blockquote">
-<p>This figure uses cell output from the Visualization notebook. That cell uses syntax at the top of the code to define a label and caption for the figure. Referencing the label pulls in the output of the cell in this document, and automatically creates links to the source document. You can read more about using the <code>embed</code> shortcode and customizing embedded content in the <a href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto documentation</a>.</p>
-</blockquote>
 <p>From our analysis in <a href="#fig-timeline" class="quarto-xref">Figure&nbsp;3</a>, we can see 3 different systems in play.</p>
 <p>Firstly, the shallow earthquake swarm leading up to the eruption on 19th September, related to significant surface deformation and shallow magma intrusion.</p>
 <p>After the eruption, continuous shallow seismicity started at 10-15km corresponding to magma movement in the crustal reservoir.</p>
@@ -315,10 +286,6 @@ p_e = 1-\mathrm{e}^{-t \lambda}
 </section>
 <section id="availability" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="availability">Availability</h2>
-<blockquote class="blockquote">
-<p>Data availability statement should be specified in a separate block with metadata <code>"part": "availability"</code>, similar to the abstract.</p>
-<p>AGU requires an Availability Statement for the underlying data needed to understand, evaluate, and build upon the reported research at the time of peer review and publication.</p>
-</blockquote>
 <p>A web scraping script was developed to pull data into a machine-readable form for analysis. That code tool <a href="https://github.com/stevejpurves/ign-earthquake-data">is available on GitHub</a> along with a copy of recently updated data.</p>
 
 </section>
@@ -334,21 +301,15 @@ Marrero, José, Alicia García, Manuel Berrocoso, Ángeles Llinares, Antonio Rod
   date = {2023-05-01},
   doi = {10.1136/bmj.m4290},
   langid = {en},
-  abstract = {\textgreater{} The notebook should begin with a single
-    markdown cell which contains document front matter (such as the
-    title, author data, license, abstract, and more). \textgreater{}
-    \textgreater The abstract should begin with a short description of
-    the problem addressed, briefly describe the new data or analyses,
-    then briefly state the main conclusion(s) and how they are
-    supported, and address any uncertainty. In September 2021, a
-    significant jump in seismic activity on the island of La Palma
-    (Canary Islands, Spain) signaled the start of a volcanic crisis that
-    still continues at the time of writing. Earthquake data is
-    continually collected and published by the Instituto Geográphico
-    Nacional (IGN). We have created an accessible dataset from this and
-    completed preliminary data analysis which shows seismicity
-    originating at two distinct depths, consistent with the model of a
-    two reservoir system feeding the currently very active volcano.}
+  abstract = {In September 2021, a significant jump in seismic activity
+    on the island of La Palma (Canary Islands, Spain) signaled the start
+    of a volcanic crisis that still continues at the time of writing.
+    Earthquake data is continually collected and published by the
+    Instituto Geográphico Nacional (IGN). We have created an accessible
+    dataset from this and completed preliminary data analysis which
+    shows seismicity originating at two distinct depths, consistent with
+    the model of a two reservoir system feeding the currently very
+    active volcano.}
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-purves2023" class="csl-entry quarto-appendix-citeas" role="listitem">
 Purves, Steve, and Rowan Cockett. 2023. <span>“La Palma

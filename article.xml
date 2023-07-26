@@ -93,15 +93,6 @@ administration</role>
 </permissions>
 
 <abstract>
-<disp-quote>
-  <p>The notebook should begin with a single markdown cell which
-  contains document front matter (such as the title, author data,
-  license, abstract, and more).</p>
-  <p>The abstract should begin with a short description of the problem
-  addressed, briefly describe the new data or analyses, then briefly
-  state the main conclusion(s) and how they are supported, and address
-  any uncertainty.</p>
-</disp-quote>
 <p>In September 2021, a significant jump in seismic activity on the
 island of La Palma (Canary Islands, Spain) signaled the start of a
 volcanic crisis that still continues at the time of writing. Earthquake
@@ -126,35 +117,12 @@ system feeding the currently very active volcano.</p>
 <body>
 <sec id="introduction">
   <title>Introduction</title>
-  <disp-quote>
-    <p>The content of your notebook may be broken into any number of
-    markdown or code cells. Markdown cells use Quarto markdown. Quarto
-    markdown supports an extended version of the basic Markdown syntax
-    originally created by John Gruber, which adds support for many
-    common document elements including citations, figures, tables,
-    admonitions, and more. Quarto markdown also supports the use of
-    LaTeX for mathematical equations, advanced layout control, as well
-    as other advanced formatting.</p>
-  </disp-quote>
   <p>La Palma is one of the west most islands in the Volcanic
   Archipelago of the Canary Islands, a Spanish territory situated is the
   Atlantic Ocean where at their closest point are 100km from the African
   coast <xref alt="Figure 1" rid="fig-map">Figure 1</xref>. The island
   is one of the youngest, remains active and is still in the island
   forming stage.</p>
-  <disp-quote>
-    <p>Figures may be added to your notebook using
-    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/figures.html">markdown
-    images or specifial markdown elements</ext-link> (‘fenced divs’).
-    They may refer to images saved in your
-    <monospace>images/</monospace> folder (or other folders), images
-    from the web, or generated directly using code cells. You may embed
-    figures produced in other notebooks using the
-    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/notebook-embed.html">embed
-    shortcode</ext-link> (this embed figures, tables, or any other
-    content from Jupyter Notebooks). Refer to figures by their label
-    (e.g. <monospace>@fig-map</monospace>).</p>
-  </disp-quote>
   <fig id="fig-map">
     <caption><p>Figure 1: Map of La Palma in the Canary Islands. Image
     credit
@@ -170,17 +138,6 @@ system feeding the currently very active volcano.</p>
     <p>A number of eruptions were recorded since the colonization of the
     islands by Europeans in the late 1400s, these are summarised in
     <xref alt="Table 1" rid="tbl-history">Table 1</xref>.</p>
-    <disp-quote>
-      <p>Quarto supports a number of ways to create tables using both
-      standard markdown tables (pipe tables) and more complex markdown
-      tables using a grid style syntax (grid tables). In addition,
-      Quarto provides the ability to control column width, caption
-      position, create subtables, and more. See
-      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/tables.html">Quarto’s
-      table document</ext-link> to learn more. Refer to tables in the
-      text by their label
-      (e.g. <monospace>@tbl-history</monospace>).</p>
-    </disp-quote>
     <table-wrap>
       <caption>
         <p>Table 1: Recent historic eruptions on La Palma</p>
@@ -232,14 +189,6 @@ system feeding the currently very active volcano.</p>
     the 1971 event. The probability of a future eruption can be modeled
     by a Poisson distribution
     <xref alt="Equation 1" rid="eq-poisson">Equation 1</xref>.</p>
-    <disp-quote>
-      <p>Numbered equations may be defined using ‘dollar math’ by
-      placing equations between matching pairs of dollar signs. Learn
-      more about Quarto’s equation here:
-      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/cross-references.html#equations">https://quarto.org/docs/authoring/cross-references.html#equations</ext-link>.
-      Refer to equations in the text by their label
-      (e.g. <monospace>@eq-poisson</monospace>).</p>
-    </disp-quote>
     <p><styled-content id="eq-poisson"><disp-formula><alternatives>
     <tex-math><![CDATA[
     p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
@@ -273,18 +222,6 @@ system feeding the currently very active volcano.</p>
   </sec>
   <sec id="magma-reservoirs">
     <title>Magma Reservoirs</title>
-    <disp-quote>
-      <p>You may provide the bibliography directly as a bibtex,
-      biblatex, CSL JSON, or CSL YAML file (defined in the document
-      front matter or <monospace>_quarto.yml</monospace> project file)
-      then embed the citation by citation key in your text using the
-      <monospace>[@cite]</monospace> or <monospace>@cite</monospace> for
-      parenthetical or textual citations, respectively. The following
-      paragraph provides an example of this. Quarto’s
-      <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/footnotes-and-citations.html">documentation
-      on citations</ext-link> provides more details on working with
-      bibliographies and citations.</p>
-    </disp-quote>
     <p>Studies of the magma systems feeding the volcano, such as Marrero
     et al.
     (<xref alt="2019" rid="ref-marrero2019" ref-type="bibr">2019</xref>)
@@ -304,11 +241,6 @@ system feeding the currently very active volcano.</p>
 </sec>
 <sec id="dataset">
   <title>Dataset</title>
-  <disp-quote>
-    <p>All data used in the notebook should be present in the
-    <monospace>data/</monospace> folder so notebooks may be executed in
-    place with no additional input.</p>
-  </disp-quote>
   <p>The earthquake dataset used in our analysis was generated from the
   <ext-link ext-link-type="uri" xlink:href="https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html">IGN
   web portal</ext-link> this is public data released under a permissive
@@ -334,17 +266,6 @@ system feeding the currently very active volcano.</p>
     in time.</p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="article_files/figure-jats/fig-timeline-output-1.png" />
   </fig>
-  <disp-quote>
-    <p>This figure uses cell output from the Visualization notebook.
-    That cell uses syntax at the top of the code to define a label and
-    caption for the figure. Referencing the label pulls in the output of
-    the cell in this document, and automatically creates links to the
-    source document. You can read more about using the
-    <monospace>embed</monospace> shortcode and customizing embedded
-    content in the
-    <ext-link ext-link-type="uri" xlink:href="https://quarto.org/docs/authoring/notebook-embed.html">Quarto
-    documentation</ext-link>.</p>
-  </disp-quote>
   <p>From our analysis in
   <xref alt="Figure 3" rid="fig-timeline">Figure 3</xref>, we can see 3
   different systems in play.</p>
@@ -368,15 +289,6 @@ system feeding the currently very active volcano.</p>
 </sec>
 <sec id="availability">
   <title>Availability</title>
-  <disp-quote>
-    <p>Data availability statement should be specified in a separate
-    block with metadata
-    <monospace>&quot;part&quot;: &quot;availability&quot;</monospace>,
-    similar to the abstract.</p>
-    <p>AGU requires an Availability Statement for the underlying data
-    needed to understand, evaluate, and build upon the reported research
-    at the time of peer review and publication.</p>
-  </disp-quote>
   <p>A web scraping script was developed to pull data into a
   machine-readable form for analysis. That code tool
   <ext-link ext-link-type="uri" xlink:href="https://github.com/stevejpurves/ign-earthquake-data">is
