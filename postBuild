@@ -7,8 +7,7 @@ echo
 echo Installing Quarto $VERSION...
 echo
 
-DL_URL=https://github.com/quarto-dev/quarto-cli/releases/download/$VERSION/quarto-$VERSION-linux-amd64.deb
-curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/$VERSION/quarto-$VERSION-linux-amd64.deb
+curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v$VERSION/quarto-$VERSION-linux-amd64.deb
 dpkg -x quarto-$VERSION-linux-amd64.deb quarto
 
 mkdir -p ./.local/bin
