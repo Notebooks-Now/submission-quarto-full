@@ -16,7 +16,6 @@ format:
     citations-hover: true
     crossrefs-hover: true
     toc-location: left
-    code-links: false
     title-block-style: manuscript
   agu-pdf: 
     notebook-links: inline
