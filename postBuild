@@ -1,8 +1,18 @@
-curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v1.4.300/quarto-1.4.300-linux-amd64.deb
-dpkg -x quarto-1.4.300-linux-amd64.deb .quarto
-rm -rf quarto-1.4.300-linux-amd64.deb
+RELEASE_JSON=$(curl https://quarto.org/docs/download/_prerelease.json)
+VERSION=$( jq -r  '.version' <<< "${RELEASE_JSON}" ) 
+
+echo
+echo Installing Quarto $VERSION...
+echo
+
+DL_URL=https://github.com/quarto-dev/quarto-cli/releases/download/$VERSION/quarto-$VERSION-linux-amd64.deb
+curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/$VERSION/quarto-$VERSION-linux-amd64.deb
+dpkg -x quarto-$VERSION-linux-amd64.deb quarto
 
 mkdir -p ./.local/bin
-ln -s ~/.quarto/opt/quarto/bin/quarto ~/.local/bin/quarto
+ln -s ~/quarto/opt/quarto/bin/quarto ~/.local/bin/quarto
 
-quarto install tinytex --no-prompt
+echo
+echo Installed Quarto $VERSION...
+echo
+
