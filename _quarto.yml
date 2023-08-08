@@ -16,7 +16,7 @@ format:
     citations-hover: true
     crossrefs-hover: true
     toc-location: left
-    title-block-style: manuscript
+    code-links: false
   agu-pdf: 
     notebook-links: inline
   docx: default

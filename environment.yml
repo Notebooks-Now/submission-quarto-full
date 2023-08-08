@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - default
 dependencies:
+  - jupyterlab>=4.0
   - numpy
   - matplotlib
   - pandas
@@ -10,4 +11,4 @@ dependencies:
   - seaborn
   - altair
   - plotly
-  - jupyterlab-myst
+  - jupyterlab-quarto
