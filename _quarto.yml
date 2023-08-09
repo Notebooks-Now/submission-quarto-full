@@ -6,6 +6,7 @@ manuscript:
   resources:
     - data/catalogoComunSV_1663233588717.csv
     - data/lapalma_ign.csv
+  code-links: [repo, devcontainer]
 
 
 format:
