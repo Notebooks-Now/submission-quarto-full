@@ -12,5 +12,18 @@
     },
     "ghcr.io/devcontainers/features/conda:1": {}
   },
-  "postCreateCommand": "conda env update --prefix ./env --file environment.yml  --prune"
+  "postCreateCommand": "conda env update --prefix ./env --file environment.yml  --prune",
+  "customizations": {
+     "vscode": {
+       "extensions": [
+         "quarto.quarto",
+         "sumneko.lua"
+       ]
+     },
+     "codespaces": {
+       "openFiles": [
+         "article.qmd"
+       ]
+     }
+   }  
 }
