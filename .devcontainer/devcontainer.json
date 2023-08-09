@@ -12,7 +12,7 @@
     },
     "ghcr.io/devcontainers/features/conda:1": {}
   },
-  "postCreateCommand": "conda init bash && conda env create -f environment.yml && conda activate lapalma-earthquakes",
+  "postCreateCommand": "./.devcontainer/postCreateCommand.sh",
   "customizations": {
      "vscode": {
        "extensions": [
