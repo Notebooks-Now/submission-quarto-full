@@ -16,8 +16,13 @@
   "customizations": {
      "vscode": {
        "extensions": [
-         "quarto.quarto",
-         "sumneko.lua"
+        "sumneko.lua",
+        "quarto.quarto",
+         "ms-python.python",
+         "ms-toolsai.jupyter",
+         "ms-toolsai.jupyter-renderers",
+         "ms-toolsai.vscode-jupyter-cell-tags",
+         "ms-toolsai.jupyter-keymap"
        ]
      },
      "codespaces": {
