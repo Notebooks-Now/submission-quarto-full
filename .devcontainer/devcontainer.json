@@ -12,7 +12,6 @@
     },
     "ghcr.io/devcontainers/features/conda:1": {}
   },
-  "postCreateCommand": "conda env update --prefix ./env --file environment.yml  --prune",
   "customizations": {
      "vscode": {
        "extensions": [
