@@ -11,6 +11,8 @@ dependencies:
   - seaborn
   - altair
   - plotly
+  - jupyter-server-proxy
+  - code-server >=3.2
   - pip
   - pip:
     - jupyterlab-quarto
