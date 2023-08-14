@@ -25,3 +25,14 @@ quarto install tinytex --no-prompt
 echo
 echo Installed TinyTex...
 echo
+
+echo Configuring VSCode...
+echo
+
+code-server --install-extension ms-python.python
+code-server --install-extension sumneko.lua
+code-server --install-extension quarto.quarto
+
+echo
+echo Configured VSCode...
+echo
