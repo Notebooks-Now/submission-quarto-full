@@ -34,6 +34,7 @@ and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
 <given-names>Steve</given-names>
 </name>
 <string-name>Steve Purves</string-name>
+
 <email>steve@curvenote.com</email>
 <role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
 <role vocab="https://credit.niso.org" vocab-term="project
@@ -51,6 +52,7 @@ administration</role>
 <given-names>Rowan</given-names>
 </name>
 <string-name>Rowan Cockett</string-name>
+
 <xref ref-type="aff" rid="aff-1">a</xref>
 </contrib>
 </contrib-group>
@@ -334,6 +336,7 @@ system feeding the currently very active volcano.</p>
 <given-names>Steve</given-names>
 </name>
 <string-name>Steve Purves</string-name>
+
 </contrib>
 </contrib-group>
 </front-stub>
@@ -992,6 +995,7 @@ df.loc[(df['Date'] &gt;= '2021-12-31'), 'Phase'] = 4</code>
 <given-names>Steve</given-names>
 </name>
 <string-name>Steve Purves</string-name>
+
 </contrib>
 </contrib-group>
 </front-stub>
