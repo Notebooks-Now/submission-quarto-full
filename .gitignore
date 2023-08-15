@@ -11,7 +11,7 @@
 /.quarto/
 /_manuscript
 
-TinyTeX/
+.TinyTeX/
 .bash_logout
 .bashrc
 .cache/
