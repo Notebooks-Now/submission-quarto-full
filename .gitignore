@@ -10,3 +10,18 @@
 
 /.quarto/
 /_manuscript
+
+TinyTeX/
+.bash_logout
+.bashrc
+.cache/
+.code-server/
+.conda/
+.config/
+.jupyter-server-log.txt
+.jupyter/
+.local/
+.npm/
+.profile
+.wget-hsts
+.yarn/
