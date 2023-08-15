@@ -53,13 +53,5 @@ echo
 echo Configured VSCode...
 echo
 
-echo Registering VSCode...
-echo
-
 # Enable the proxy extension in notebook and lab
 python3 -m pip install jupyter-server-proxy
-python3 -m pip install git+https://github.com/dragonstyle/vscode_binder_proxy
-
-echo
-echo Registered VSCode...
-echo
