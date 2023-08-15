@@ -9,6 +9,7 @@ echo
 
 curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v$VERSION/quarto-$VERSION-linux-amd64.deb
 dpkg -x quarto-$VERSION-linux-amd64.deb .quarto
+rm -rf quarto-$VERSION-linux-amd64.deb
 
 mkdir -p ./.local/bin
 ln -s ~/.quarto/opt/quarto/bin/quarto ~/.local/bin/quarto
