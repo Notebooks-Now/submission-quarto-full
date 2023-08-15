@@ -1,12 +1,12 @@
 # Traitlet configuration file for jupyter-notebook.
 
 c.ServerProxy.servers = {
-    'openrefine': {
+    'vscode': {
         'command': ['code-server', '--auth', 'none', '--disable-telemetry', '--port={port}'],
         'timeout': 300,
         'launcher_entry': {
             'enabled': True,
-            'icon_path': '/home/jovyan/.jupyter/vscode.svg',
+            'icon_path': '~/.jupyter/vscode.svg',
             'title': 'VS Code',
         },
     },
