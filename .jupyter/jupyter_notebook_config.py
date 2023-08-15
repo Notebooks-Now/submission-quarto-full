@@ -6,7 +6,7 @@ c.ServerProxy.servers = {
         'timeout': 300,
         'launcher_entry': {
             'enabled': True,
-            'icon_path': '~/.jupyter/vscode.svg',
+            'icon_path': '.jupyter/vscode.svg',
             'title': 'VS Code',
         },
     },
