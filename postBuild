@@ -29,10 +29,36 @@ echo
 echo Configuring VSCode...
 echo
 
+# Download and install VS Code server
+CODE_VERSION=4.16.1
+
+wget -q -O code-server.tar.gz https://github.com/coder/code-server/releases/download/v$CODE_VERSION/code-server-$CODE_VERSION-linux-amd64.tar.gz
+tar xzf code-server.tar.gz
+
+mv "code-server-$CODE_VERSION-linux-amd64" .code-server
+
+mkdir -p ./.local/bin
+ls -la ~/.code-server/bin/
+
+ln -s ~/.code-server/bin/code-server ~/.local/bin/code-server  
+
+rm -rf code-server.tar.gz
+
 code-server --install-extension ms-python.python
 code-server --install-extension sumneko.lua
 code-server --install-extension quarto.quarto
 
 echo
 echo Configured VSCode...
+echo
+
+echo Registering VSCode...
+echo
+
+# Enable the proxy extension in notebook and lab
+python3 -m pip install jupyter-server-proxy
+python3 -m pip install git+https://github.com/dragonstyle/vscode_binder_proxy
+
+echo
+echo Registered VSCode...
 echo
