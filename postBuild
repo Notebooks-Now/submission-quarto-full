@@ -1,18 +1,45 @@
 #!/bin/bash -v
 
-# determine the latest pre-release version
-# TODO: make a more configurable version that can use release, pre-release, or pinned versions
-RELEASE_JSON=$(curl https://quarto.org/docs/download/_prerelease.json)
-VERSION=$(jq -r  '.version' <<< "${RELEASE_JSON}") 
+# determine which version of Quarto to install
+QUARTO_VERSION=prerelease
+
+if [ $QUARTO_VERSION = "prerelease" ]; then
+	QUARTO_JSON="_prerelease.json"
+elif [ $QUARTO_VERSION = "release" ]; then
+	QUARTO_JSON="_download.json"
+fi
+
+if [ $QUARTO_JSON != "" ]; then
+
+# create a python script and run it
+PYTHON_SCRIPT=_quarto_version.py
+if [ -e $PYTHON_SCRIPT ]; then
+	rm -rf $PYTHON_SCRIPT  
+fi
+
+cat > $PYTHON_SCRIPT <<EOF
+import urllib, json
+
+import urllib.request, json 
+with urllib.request.urlopen("https://quarto.org/docs/download/${QUARTO_JSON}") as url:
+	data = json.load(url)
+	print(data['version'])
+
+EOF
+
+QUARTO_VERSION=$(python $PYTHON_SCRIPT)
+rm -rf $PYTHON_SCRIPT  
+
+fi
 
 echo
-echo Installing Quarto $VERSION...
+echo Installing Quarto $QUARTO_VERSION...
 echo
 
 # download and install the deb file
-curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v$VERSION/quarto-$VERSION-linux-amd64.deb
-dpkg -x quarto-$VERSION-linux-amd64.deb .quarto
-rm -rf quarto-$VERSION-linux-amd64.deb
+curl -LO https://github.com/quarto-dev/quarto-cli/releases/download/v$VERSION/quarto-$QUARTO_VERSION-linux-amd64.deb
+dpkg -x quarto-$QUARTO_VERSION-linux-amd64.deb .quarto
+rm -rf quarto-$QUARTO_VERSION-linux-amd64.deb
 
 # get quarto in the path
 mkdir -p ./.local/bin
