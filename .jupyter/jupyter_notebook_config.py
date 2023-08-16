@@ -2,7 +2,7 @@
 
 c.ServerProxy.servers = {
     'vscode': {
-        'command': ['code-server', '--auth', 'none', '--disable-telemetry', '--port={port}', '.', '-g', 'article.qmd:1:1'],
+        'command': ['code-server', '--auth', 'none', '--disable-telemetry', '--port={port}', '--goto', 'article.qmd:1:1', '.'],
         'timeout': 300,
         'launcher_entry': {
             'enabled': True,
