@@ -1,0 +1,18 @@
+{
+    "files.exclude": {
+        "**/.bashrc": true,
+        "**/.bash_logout": true,
+        "**/.cache": true,
+        "**/.code-server": true,
+        "**/.conda": true,      
+        "**/.config": true,
+        "**/.ipython": true,
+        "**/.jupyter": true,
+        "**/.local": true,
+        "**/.npm": true,
+        "**/.yarn": true,
+        "**/.quarto": true,
+        "**/.TinyTeX": true,
+        "**/jupyter_vscode_proxy.egg-info": true
+    }
+}
