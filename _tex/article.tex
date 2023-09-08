@@ -75,24 +75,28 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+% avoid brackets around text for \cite:
+\makeatletter
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
-  \fi
-  % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+\newlength{\cslentryspacing}
+\setlength{\cslentryspacing}{0em}
+\usepackage{enumitem}
+\newlist{CSLReferences}{itemize}{1}
+\setlist[CSLReferences]{label={},
+  leftmargin=\cslhangindent,
+  itemindent=-1\cslhangindent,
+  parsep=\parskip,
+  itemsep=\cslentryspacing}
 \usepackage{calc}
 \newcommand{\CSLBlock}[1]{#1\hfill\break}
 \newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
@@ -197,8 +201,7 @@ system feeding the currently very active volcano.
 
 
 
-\hypertarget{introduction}{%
-\subsection{Introduction}\label{introduction}}
+\subsection{Introduction}\label{introduction}
 
 La Palma is one of the west most islands in the Volcanic Archipelago of
 the Canary Islands, a Spanish territory situated is the Atlantic Ocean
@@ -223,14 +226,13 @@ recent and currently active being the \emph{Cumbre Vieja} volcano, a
 north-south volcanic ridge that constitutes the southern half of the
 island.
 
-\hypertarget{eruption-history}{%
-\subsubsection{Eruption History}\label{eruption-history}}
+\subsubsection{Eruption History}\label{eruption-history}
 
 A number of eruptions were recorded since the colonization of the
 islands by Europeans in the late 1400s, these are summarised in
 Table~\ref{tbl-history}.
 
-\hypertarget{tbl-history}{}
+\phantomsection\label{tbl-history}
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tbl-history}Recent historic eruptions on La
 Palma}\tabularnewline
@@ -258,17 +260,17 @@ This equates to an eruption on average every 79 years up until the 1971
 event. The probability of a future eruption can be modeled by a Poisson
 distribution Equation~\ref{eq-poisson}.
 
-\begin{equation}\protect\hypertarget{eq-poisson}{}{
+\begin{equation}\phantomsection\label{eq-poisson}{
 p(x)=\frac{e^{-\lambda} \lambda^{x}}{x !}
-}\label{eq-poisson}\end{equation}
+}\end{equation}
 
 Where \(\lambda\) is the number of eruptions per year,
 \(\lambda=\frac{1}{79}\) in this case. The probability of a future
 eruption in the next \(t\) years can be calculated by:
 
-\begin{equation}\protect\hypertarget{eq-probability}{}{
+\begin{equation}\phantomsection\label{eq-probability}{
 p_e = 1-\mathrm{e}^{-t \lambda}
-}\label{eq-probability}\end{equation}
+}\end{equation}
 
 So following the 1971 eruption the probability of an eruption in the
 following 50 years --- the period ending this year --- was 0.469. After
@@ -277,8 +279,7 @@ the event, the number of eruptions per year moves to
 within the next 50 years (2022-2071) rises to 0.487 and in the next 100
 years, this rises again to 0.736.
 
-\hypertarget{magma-reservoirs}{%
-\subsubsection{Magma Reservoirs}\label{magma-reservoirs}}
+\subsubsection{Magma Reservoirs}\label{magma-reservoirs}
 
 Studies of the magma systems feeding the volcano, such as Marrero et al.
 (2019) has proposed that there are two main magma reservoirs feeding the
@@ -298,8 +299,7 @@ and in turn feeds a shallower crustal reservoir (10-20km depth).
 In this paper, we look at recent seismicity data to see if we can see
 evidence of such a system action, see Figure~\ref{fig-reservoirs}.
 
-\hypertarget{dataset}{%
-\subsection{Dataset}\label{dataset}}
+\subsection{Dataset}\label{dataset}
 
 The earthquake dataset used in our analysis was generated from the
 \href{https://www.ign.es/web/resources/volcanologia/tproximos/canarias.html}{IGN
@@ -311,8 +311,7 @@ machine-readable form for analysis. That code tool
 \href{https://github.com/stevejpurves/ign-earthquake-data}{is available
 on GitHub} along with a copy of recently updated data.
 
-\hypertarget{results}{%
-\subsection{Results}\label{results}}
+\subsection{Results}\label{results}
 
 The dataset was loaded into a Jupyter notebook
 \href{./notebooks/visualization-figure-creation-seaborn.ipynb}{visualization}
@@ -349,8 +348,7 @@ corresponding to changes in the mantle reservoir. These are also
 continuous but occur with a lower frequency than in the crustal
 reservoir.
 
-\hypertarget{conclusions}{%
-\subsection{Conclusions}\label{conclusions}}
+\subsection{Conclusions}\label{conclusions}
 
 From the analysis of the earthquake data collected and published by IGN
 for the period of 11 September through to 9 November 2021. Visualization
@@ -358,8 +356,7 @@ of the earthquake events at different depths appears to confirm the
 presence of both mantle and crustal reservoirs as proposed by
 \{cite:t\}\texttt{marrero2019}.
 
-\hypertarget{availability}{%
-\subsection*{Availability}\label{availability}}
+\subsection*{Availability}\label{availability}
 \addcontentsline{toc}{subsection}{Availability}
 
 A web scraping script was developed to pull data into a machine-readable
@@ -367,9 +364,10 @@ form for analysis. That code tool
 \href{https://github.com/stevejpurves/ign-earthquake-data}{is available
 on GitHub} along with a copy of recently updated data.
 
-\hypertarget{refs}{}
-\begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-marrero2019}{}}%
+\phantomsection\label{refs}
+\setlength{\cslentryspacing}{0em}
+\begin{CSLReferences}
+\bibitem[\citeproctext]{ref-marrero2019}
 Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
 A., \& Ortiz, R. (2019). Strategies for the development of volcanic
 hazard maps in monogenetic volcanic fields: The example of {La} {Palma}
