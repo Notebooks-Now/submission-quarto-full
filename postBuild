@@ -92,8 +92,8 @@ echo
 echo Configured VSCode
 echo
 # install required python packages
-python3 -m pip install jupyter-server-proxy
-python3 -m pip install jupyterlab-quarto==0.1.45
+python3 -m pip install git+https://github.com/trungleduc/jupyter-server-proxy@lab4
+python3 -m pip install jupyterlab-quarto
 
 echo
 echo Completed
