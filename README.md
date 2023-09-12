@@ -1,12 +1,12 @@
 # Notebooks Now! Submission Template
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Notebooks-Now/submission-myst-full/HEAD?labpath=notebooks/data-screening.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Notebooks-Now/submission-quarto-full/HEAD?urlpath=vscode)
 
-This submission template is for a markdown-based publication with additional supporting notebook and markdown files, as well as supporting data, bibliography, and MyST build configuration.
+This submission template is for a markdown-based publication with additional supporting notebook and markdown files, as well as supporting data, bibliography, and Quarto build configuration. It is based upon a new type of project in Quarto, Manuscripts. Learn more about manuscripts here: <https://quarto.org/docs/manuscripts/>.
 
-## Source files
+## Source file
 
-The primary source file for this template is a MyST markdown article. This file may reference notebook cells from other sub-articles to use the output of these cells as figures. It may also reference content from other markdown sub-articles. All of these supplementary source notebooks/articles should be saved in the `notebooks/` folder. It also contains MyST blocks tagged in their metadata as `"part": "abstract"`, or `"part": "availability"` - these cells will be extracted from the document and included as the specified part in the built output.
+The primary source file for this template is a Quarto markdown article. This file may embed notebook cells from other sub-articles to use the output of these cells as figures. It may also reference content from other markdown sub-articles. All of these supplementary source notebooks/articles should be saved in the notebooks/ folder. 
 
 ## Supporting material
 
@@ -20,22 +20,18 @@ Similar to the `data/` directory, images for figures should be specified in `ima
 
 ### Bibliography
 
-Bibliography entries may be specified two ways, both described in the [MyST docs](https://myst-tools.org/docs/mystjs/citations). They may be listed explicitly in BibTeX format, by convention in the file `references.bib`, and referenced by key using a `cite` MyST role. They may also be specified as inline DOI links. These do not require full bibliographic information; the data is fetched implicitly on build from the DOI.
+Bibliography entries may be specific in the document as described in the [Quarto documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-files). 
 
-## MyST configuration
+## Quarto configuration
 
-A `myst.yml` file must be provided to configure notebook metadata and exports. This includes authors, affiliations, licenses, keywords, and [much more](https://myst-tools.org/docs/mystjs/frontmatter).
+Configuration for the example is provided by the Quarto project file, `_quarto.yml`, and the YAML block (front matter) that appears with the article markdown document.
 
-## Building output artifacts
+## Building output artfiacts
 
-To build PDF/JATS output from your source data, you must have the MyST CLI installed
+To build PDF/JATS output from your source data, you must have the Quarto CLI installed - you can download or learn about installation at <https://quarto.org/docs/download/>
 
-```bash
-npm install myst-cli
+Then render the article using
+
 ```
-
-Then build all exports defined in the `myst.yml` file:
-
-```bash
-myst build --all
+quarto render
 ```
