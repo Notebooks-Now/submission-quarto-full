@@ -4,7 +4,7 @@
 
 This submission template is for a markdown-based publication with additional supporting notebook and markdown files, as well as supporting data, bibliography, and Quarto build configuration. It is based upon a new type of project in Quarto, Manuscripts. Learn more about manuscripts here: <https://quarto.org/docs/manuscripts/>.
 
-## Source file
+## Source files
 
 The primary source file for this template is a Quarto markdown article. This file may embed notebook cells from other sub-articles to use the output of these cells as figures. It may also reference content from other markdown sub-articles. All of these supplementary source notebooks/articles should be saved in the notebooks/ folder. 
 
