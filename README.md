@@ -1,8 +1,8 @@
 # Notebooks Now! Submission Template
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Notebooks-Now/submission-quarto-full/HEAD?urlpath=vscode)
+This submission template is for a markdown-based publication with additional supporting notebook and markdown files, as well as supporting data, bibliography, and Quarto build configuration. It is based upon a new type of project in Quarto, Manuscripts. 
 
-This submission template is for a markdown-based publication with additional supporting notebook and markdown files, as well as supporting data, bibliography, and Quarto build configuration. It is based upon a new type of project in Quarto, Manuscripts. Learn more about manuscripts here: <https://quarto.org/docs/manuscripts/>.
+Get started with Quarto and Manuscript projects here: <https://quarto.org/docs/manuscripts/>.
 
 ## Source files
 
