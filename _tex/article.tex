@@ -79,8 +79,10 @@
 \NewDocumentCommand\citeproctext{}{}
 \NewDocumentCommand\citeproc{mm}{%
   \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-% avoid brackets around text for \cite:
 \makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
  \def\@biblabel#1{}
  \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
 \makeatother
@@ -88,19 +90,23 @@
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacing}
-\setlength{\cslentryspacing}{0em}
-\usepackage{enumitem}
-\newlist{CSLReferences}{itemize}{1}
-\setlist[CSLReferences]{label={},
-  leftmargin=\cslhangindent,
-  itemindent=-1\cslhangindent,
-  parsep=\parskip,
-  itemsep=\cslentryspacing}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \usepackage{url} %this package should fix any errors with URLs in refs.
@@ -108,10 +114,6 @@
 \usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
 \usepackage{soul}
 \linenumbers
-\makeatletter
-\makeatother
-\makeatletter
-\makeatother
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -211,7 +213,9 @@ and is still in the island forming stage.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\textwidth,height=\textheight]{images/la-palma-map.png}
+\centering{
+
+\includegraphics[width=1\textwidth,height=\textheight]{images/la-palma-map.png}
 
 }
 
@@ -219,7 +223,7 @@ and is still in the island forming stage.
 credit
 \href{https://commons.wikimedia.org/w/index.php?curid=76638603}{NordNordWest}}
 
-\end{figure}
+\end{figure}%
 
 La Palma has been constructed by various phases of volcanism, the most
 recent and currently active being the \emph{Cumbre Vieja} volcano, a
@@ -232,10 +236,9 @@ A number of eruptions were recorded since the colonization of the
 islands by Europeans in the late 1400s, these are summarised in
 Table~\ref{tbl-history}.
 
-\phantomsection\label{tbl-history}
 \begin{longtable}[]{@{}ll@{}}
-\caption{\label{tbl-history}Recent historic eruptions on La
-Palma}\tabularnewline
+\caption{Recent historic eruptions on La
+Palma}\label{tbl-history}\tabularnewline
 \toprule\noalign{}
 Name & Year \\
 \midrule\noalign{}
@@ -288,13 +291,15 @@ and in turn feeds a shallower crustal reservoir (10-20km depth).
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\textwidth,height=\textheight]{images/reservoirs.png}
+\centering{
+
+\includegraphics[width=1\textwidth,height=\textheight]{images/reservoirs.png}
 
 }
 
 \caption{\label{fig-reservoirs}Proposed model from Marrero et al}
 
-\end{figure}
+\end{figure}%
 
 In this paper, we look at recent seismicity data to see if we can see
 evidence of such a system action, see Figure~\ref{fig-reservoirs}.
@@ -321,17 +326,21 @@ spatially, by depth, by magnitude and in time.
 
 \begin{figure}[H]
 
-{\centering \includegraphics{article_files/figure-latex/fig-timeline-output-1.png}
+\centering{
+
+\includegraphics{article_files/figure-latex/fig-timeline-output-1.png}
 
 }
 
 \caption{\label{fig-timeline}Earthquake data over time (n=5465) to
 understand their distributions spatially, by depth, by magnitude and in
-time. Source:
+time.}
+
+\end{figure}%
+
+\textsubscript{Source:
 \href{https://Notebooks-Now.github.io/submission-quarto-full/notebooks/visualization-figure-creation-seaborn-preview.html\#cell-fig-timeline}{Visualization
 \& Figure Creation}}
-
-\end{figure}
 
 From our analysis in Figure~\ref{fig-timeline}, we can see 3 different
 systems in play.
@@ -365,8 +374,7 @@ form for analysis. That code tool
 on GitHub} along with a copy of recently updated data.
 
 \phantomsection\label{refs}
-\setlength{\cslentryspacing}{0em}
-\begin{CSLReferences}
+\begin{CSLReferences}{1}{0}
 \bibitem[\citeproctext]{ref-marrero2019}
 Marrero, J., García, A., Berrocoso, M., Llinares, Á., Rodríguez-Losada,
 A., \& Ortiz, R. (2019). Strategies for the development of volcanic

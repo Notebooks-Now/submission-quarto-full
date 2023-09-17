@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.358">
+    <meta name="generator" content="quarto-1.4.369">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -124,6 +124,9 @@
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -191,18 +194,27 @@
 <h2 class="anchored" data-anchor-id="monitoring-la-palma">Monitoring La Palma</h2>
 <p>The Instituto Geográphico Nacional of Spain maintains a listing of the monitoring equipment and resources installed on the Canary Islands, including the island of La Palma. The equipment is installed and operated by the various cooperating governmental organizations and IGN.</p>
 <p>The monitoring stations measure position, seismic activity, chemistry/gas, deformation, and inclination. The network of seismic monitoring stations marked by the wave icon (dark blue) in Figure 1 below is of particular interest to this study.</p>
-<div id="fig-stations" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="../images/stations.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></p>
-<figcaption class="figure-caption">Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: <a href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" class="uri">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</a></figcaption>
+<div id="fig-stations" class="quarto-figure quarto-figure-center anchored" data-align="center" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-stations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/stations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html"><img src="../images/stations.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></a>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-stations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: <a href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" class="uri">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</a>
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="seismic-monitoring-stations" class="level2">
 <h2 class="anchored" data-anchor-id="seismic-monitoring-stations">Seismic Monitoring Stations</h2>
 <p>The active seismic monitoring stations have been installed over the period 2009 to 2021. As of Aug 5, 2022 there are 12 active stations (<span class="citation" data-cites="tbl-active">@tbl-active</span>) and 4 decommissioned stations (<span class="citation" data-cites="tbl-inactive">@tbl-inactive</span>).</p>
+<div id="tbl-active" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-active-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Seismic monitoring stations on La Palma
+</figcaption>
+<div aria-describedby="tbl-active-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Seismic monitoring stations on La Palma {#tbl-active}</caption>
 <thead>
 <tr class="header">
 <th>Id</th>
@@ -312,10 +324,18 @@
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>A number of stations have been upgraded since commissioning, where EH (Extremely Short Period) sensors were replaced with HH (High Broad Band) sensors based on the change to the <a href="https://ds.iris.edu/ds/nodes/dmc/data/formats/seed-channel-naming/">SEED channel identifiers</a> reported.</p>
 <p>The following decommissioned stations were previously part of the seismic network on the island and contributed to measurements over the period 2017 to 2021.</p>
+<div id="tbl-inactive" class="anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="table quarto-float-caption quarto-float-tbl" id="tbl-inactive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Decommissioned seismic monitoring stations on La Palma
+</figcaption>
+<div aria-describedby="tbl-inactive-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Decommissioned seismic monitoring stations on La Palma {#tbl-inactive}</caption>
 <thead>
 <tr class="header">
 <th>Id</th>
@@ -361,6 +381,9 @@
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <div class="{note}">
 <p>For more information on the monitoring network in the Canary Islands visit <a href="https://www.ign.es/web/ign/portal/vlc-area-volcanologia" class="uri">https://www.ign.es/web/ign/portal/vlc-area-volcanologia</a></p>
 </div>
@@ -709,6 +732,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content --> 
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script> 
   
 </body></html>

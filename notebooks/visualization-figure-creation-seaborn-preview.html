@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.358">
+    <meta name="generator" content="quarto-1.4.369">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,6 +157,9 @@
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -503,9 +506,13 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>ax_timeline.set_xlabel(<span class="st">"Eruption Timeline"</span>, <span class="bu">dict</span>(fontsize<span class="op">=</span><span class="dv">20</span>), labelpad<span class="op">=</span><span class="dv">20</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="fig-timeline" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p class=""><img src="visualization-figure-creation-seaborn_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time.</figcaption>
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/fig-timeline-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="Figure&nbsp;1: Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time."><img src="visualization-figure-creation-seaborn_files/figure-html/fig-timeline-output-1.png" class="img-fluid figure-img"></a>
+</div>
+<figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-timeline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Earthquake data over time (n=5465) to understand their distributions spatially, by depth, by magnitude and in time.
+</figcaption>
 </figure>
 </div>
 </div>
@@ -531,42 +538,78 @@ Name: DateTime, Length: 11347, dtype: datetime64[ns]</code></pre>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="st">'Cumulative Events 01-01-2017 to 01-01-2022'</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-9-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-9-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="b1fc42cc" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_early, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f'Events prior to 2021-09-11 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_early.index)<span class="sc">}</span><span class="ss"> events)'</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-10-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-10-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-10-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [10]:</pre></div><div id="19e275d7" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_pre, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events Immediately before Eruption 11-19 September 2021 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_pre.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-11-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-11-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [11]:</pre></div><div id="4bcecbd4" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase1, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 1 of Eruption 2021-09-11 to 2021-09-30 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase1.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-12-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-12-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [12]:</pre></div><div id="012f5878" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase2, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 2 of Eruption 2021-10-01 to 2021-11-31 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase2.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-13-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-13-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [13]:</pre></div><div id="32e0996c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>cumulative_events_mag_depth(df_ign_phase3, hue<span class="op">=</span><span class="va">None</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.suptitle(<span class="ss">f"Events in Phase 3 of Eruption 2021-12-01 to 2021-12-31 (</span><span class="sc">{</span><span class="bu">len</span>(df_ign_phase3.index)<span class="sc">}</span><span class="ss"> events)"</span>, y<span class="op">=</span><span class="fl">1.01</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="visualization-figure-creation-seaborn_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="visualization-figure-creation-seaborn_files/figure-html/cell-14-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" data-description=": "><img src="visualization-figure-creation-seaborn_files/figure-html/cell-14-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
      </main>
@@ -913,6 +956,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content --> 
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":true,"selector":".lightbox"});</script> 
   
 </body></html>

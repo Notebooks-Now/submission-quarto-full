@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.358">
+    <meta name="generator" content="quarto-1.4.369">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -157,6 +157,9 @@
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -444,7 +447,13 @@
 <div class="cell-container"><div class="cell-decorator"><pre>In [4]:</pre></div><div id="8f6c52f4-b28d-4c22-88c7-e1b17298cae7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.plot.scatter(x<span class="op">=</span><span class="st">"Longitude"</span>, y<span class="op">=</span><span class="st">"Latitude"</span>, figsize<span class="op">=</span>(<span class="dv">12</span>,<span class="dv">12</span>), grid<span class="op">=</span><span class="st">"on"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="data-screening_files/figure-html/cell-5-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="data-screening_files/figure-html/cell-5-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description=": "><img src="data-screening_files/figure-html/cell-5-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div id="af76febd-11cd-4927-8476-5d8258ede326" class="cell markdown">
@@ -564,7 +573,13 @@
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"Depth(km)"</span>].plot.hist(bins<span class="op">=</span><span class="dv">50</span>, density<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>_<span class="op">=</span>df[<span class="st">"Depth(km)"</span>].plot.kde()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="data-screening_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="data-screening_files/figure-html/cell-7-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-description=": "><img src="data-screening_files/figure-html/cell-7-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div id="1bf2e599-12d6-40e9-bd99-db68ae6e72f5" class="cell markdown">
@@ -582,7 +597,13 @@
   scale = np.sqrt(self._sizes) * dpi / 72.0 * self._factor</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="data-screening_files/figure-html/cell-8-output-2.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="data-screening_files/figure-html/cell-8-output-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-description=": "><img src="data-screening_files/figure-html/cell-8-output-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div id="c55cd6b8-7e01-4c2d-aa71-1649ca8aee01" class="cell markdown">
@@ -595,7 +616,13 @@
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> df.plot.scatter(x<span class="op">=</span><span class="st">'DateTime'</span>, y<span class="op">=</span><span class="st">'Depth(km)'</span>, figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">8</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">50</span>,<span class="dv">0</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="data-screening_files/figure-html/cell-9-output-1.png" class="img-fluid"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div class="">
+<a href="data-screening_files/figure-html/cell-9-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-description=": "><img src="data-screening_files/figure-html/cell-9-output-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img"></a>
+</div>
+</figure>
+</div>
 </div>
 </div></div>
 <div class="cell-container"><div class="cell-decorator"><pre>In [9]:</pre></div><div id="f0a0d350-ed14-4128-9efe-cfcf2d05a66b" class="cell" data-execution_count="9">
@@ -966,6 +993,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content --> 
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom"});</script> 
   
 </body></html>
