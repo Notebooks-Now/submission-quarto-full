@@ -104,7 +104,7 @@ Subsequently, high magnitude events begin occurring at 30-40km depths correspond
 
 ## Conclusions
 
-From the analysis of the earthquake data collected and published by IGN for the period of 11 September through to 9 November 2021. Visualization of the earthquake events at different depths appears to confirm the presence of both mantle and crustal reservoirs as proposed by {cite:t}`marrero2019`.
+From the analysis of the earthquake data collected and published by IGN for the period of 11 September through to 9 November 2021. Visualization of the earthquake events at different depths appears to confirm the presence of both mantle and crustal reservoirs as proposed by @marrero2019.
 
 ## Availability {.unnumbered}
 
