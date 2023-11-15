@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.4.373">
+    <meta name="generator" content="quarto-1.4.504">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -194,10 +194,10 @@
 <h2 class="anchored" data-anchor-id="monitoring-la-palma">Monitoring La Palma</h2>
 <p>The Instituto Geográphico Nacional of Spain maintains a listing of the monitoring equipment and resources installed on the Canary Islands, including the island of La Palma. The equipment is installed and operated by the various cooperating governmental organizations and IGN.</p>
 <p>The monitoring stations measure position, seismic activity, chemistry/gas, deformation, and inclination. The network of seismic monitoring stations marked by the wave icon (dark blue) in Figure 1 below is of particular interest to this study.</p>
-<div id="fig-stations" class="quarto-figure quarto-figure-center anchored" data-align="center" width="100%">
+<div id="fig-stations" class="quarto-figure quarto-figure-center anchored" width="100%" data-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-stations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="../images/stations.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" data-description="Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html"><img src="../images/stations.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></a>
+<a href="../images/stations.png" class="lightbox" data-description="Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" data-gallery="quarto-lightbox-gallery-1"><img src="../images/stations.png" class="img-fluid figure-img" style="width:100.0%" data-align="center"></a>
 </div>
 <figcaption class="figure quarto-float-caption quarto-float-fig" id="fig-stations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Locations of monitoring stations on the island of La Palma - including locations of the 11 current seismic stations operating. The map shown is available on the IGN data portal at: <a href="http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html" class="uri">http://www.ign.es/resources/volcanologia/estaciones_red/estaciones.html</a>
@@ -517,15 +517,45 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    const typesetMath = (el) => {
+      if (window.MathJax) {
+        // MathJax Typeset
+        window.MathJax.typeset([el]);
+      } else if (window.katex) {
+        // KaTeX Render
+        var mathElements = el.getElementsByClassName("math");
+        var macros = [];
+        for (var i = 0; i < mathElements.length; i++) {
+          var texText = mathElements[i].firstChild;
+          if (mathElements[i].tagName == "SPAN") {
+            window.katex.render(texText.data, mathElements[i], {
+              displayMode: mathElements[i].classList.contains('display'),
+              throwOnError: false,
+              macros: macros,
+              fleqn: false
+            });
+          }
+        }
+      }
+    }
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
         }
+        typesetMath(container);
         return container.innerHTML
       } else {
+        typesetMath(note);
         return note.innerHTML;
       }
     } else {
@@ -534,6 +564,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
+      typesetMath(note);
       return note.innerHTML;
     }
   }
@@ -576,6 +607,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -651,7 +705,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -732,6 +785,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true});</script> 
+</script>  </div> <!-- /content -->  <script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":false});</script> 
   
 </body></html>
